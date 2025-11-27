@@ -1,0 +1,11 @@
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\bin\Debug\net8.0\VisionFlix.Domain.deps.json
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\bin\Debug\net8.0\VisionFlix.Domain.dll
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\bin\Debug\net8.0\VisionFlix.Domain.pdb
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.AssemblyInfoInputs.cache
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.AssemblyInfo.cs
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.csproj.CoreCompileInputs.cache
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.dll
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\obj\Debug\net8.0\refint\VisionFlix.Domain.dll
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.pdb
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\obj\Debug\net8.0\ref\VisionFlix.Domain.dll

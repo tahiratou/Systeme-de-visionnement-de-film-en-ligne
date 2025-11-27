@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="VisionFlix.Application/VisionFlix.Application.csproj" />
+  <Project Path="VisionFlix.Domain/VisionFlix.Domain.csproj" />
+  <Project Path="VisionFlix.Infrastructure/VisionFlix.Infrastructure.csproj" />
+  <Project Path="VisionFlix.Presentation/VisionFlix.Presentation.csproj" />
+  <Project Path="VisionFlix/VisionFlix.csproj" Id="bfe7ffa5-a3a3-488a-8a1f-4ce34c2f0f82" />
+</Solution>
