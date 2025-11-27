@@ -23,7 +23,6 @@ namespace VisionFlix.Domain.Entities
         [Required]
         public DateTime DateAchat { get; set; } = DateTime.Now;
 
-        // Navigation properties
         [ForeignKey("UtilisateurId")]
         public virtual Utilisateur Utilisateur { get; set; } = null!;
 
