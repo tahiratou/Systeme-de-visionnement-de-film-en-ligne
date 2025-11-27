@@ -13,7 +13,7 @@ namespace VisionFlix.Presentation.Forms
         {
             InitializeComponent();
             this.Text = "VisionFlix - Connexion";
-            
+
             _authService = authService;
             _serviceProvider = serviceProvider;
         }
@@ -68,6 +68,31 @@ namespace VisionFlix.Presentation.Forms
             var inscriptionForm = _serviceProvider.GetRequiredService<Inscription>();
             inscriptionForm.ShowDialog();
         }
-    }
+
+        private void btnLogin_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+		private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			var inscriptionForm = _serviceProvider.GetRequiredService<Inscription>();
+
+			this.Hide();  // Cache la connexion
+
+			var result = inscriptionForm.ShowDialog();
+
+			if (result == DialogResult.OK)
+			{
+				// L'inscription a réussi, on peut fermer la connexion
+				this.Close();
+			}
+			else
+			{
+				// L'utilisateur a annulé, on réaffiche la connexion
+				this.Show();
+			}
+		}
+	}
 }
 

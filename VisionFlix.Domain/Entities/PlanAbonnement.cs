@@ -22,7 +22,6 @@ namespace VisionFlix.Domain.Entities
 
         public bool EstActif { get; set; } = true;
 
-        // Navigation property
         public virtual ICollection<Utilisateur> Utilisateurs { get; set; } = new List<Utilisateur>();
     }
 }

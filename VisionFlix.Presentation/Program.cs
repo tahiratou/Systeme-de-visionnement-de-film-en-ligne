@@ -33,7 +33,7 @@ namespace VisionFlix.Presentation
                 services.AddDbContext<VisionFlixDbContext>(options =>
                     options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
 
-                // ===== REPOSITORIES =====
+                
                 services.AddScoped<IFilmRepository, FilmRepository>();
                 services.AddScoped<IUtilisateurRepository, UtilisateurRepository>();
                 services.AddScoped<ICategorieRepository, CategorieRepository>();

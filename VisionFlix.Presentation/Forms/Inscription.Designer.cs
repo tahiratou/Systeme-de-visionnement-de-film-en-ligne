@@ -113,6 +113,7 @@
             linkLabel2.LinkColor = Color.FromArgb(128, 128, 255);
             linkLabel2.Name = "linkLabel2";
             linkLabel2.TabStop = true;
+            linkLabel2.LinkClicked += linkLabel2_LinkClicked;
             // 
             // Inscription
             // 

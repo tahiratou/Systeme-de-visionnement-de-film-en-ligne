@@ -41,366 +41,345 @@ namespace VisionFlix.Presentation.Forms
 
         private void InitializeComponent()
         {
-            this.pictureBoxFilm = new PictureBox();
-            this.lblTitre = new Label();
-            this.lblAnnee = new Label();
-            this.lblGenre = new Label();
-            this.lblDuree = new Label();
-            this.lblRealisateur = new Label();
-            this.lblPrix = new Label();
-            this.panelCote = new Panel();
-            this.lblEtoilesCote = new Label();
-            this.lblCoteValeur = new Label();
-            this.lblDescriptionHeader = new Label();
-            this.txtDescription = new TextBox();
-            this.btnAcheter = new Button();
-            this.btnVisionner = new Button();
-            this.panelNotation = new Panel();
-            this.btnSauvegarderNote = new Button();
-            this.btnFermer = new Button();
-
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFilm)).BeginInit();
-            this.panelCote.SuspendLayout();
-            this.panelNotation.SuspendLayout();
-            this.SuspendLayout();
-
-            // 
-            // DetailsFilm
-            // 
-            this.AutoScaleDimensions = new SizeF(7F, 15F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.ClientSize = new Size(800, 600);
-            this.FormBorderStyle = FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.StartPosition = FormStartPosition.CenterParent;
-            this.Text = "VisionFlix - Détails du film";
-            this.BackColor = Color.FromArgb(20, 20, 20);
-
+            pictureBoxFilm = new PictureBox();
+            lblTitre = new Label();
+            lblAnnee = new Label();
+            lblGenre = new Label();
+            lblDuree = new Label();
+            lblRealisateur = new Label();
+            lblPrix = new Label();
+            panelCote = new Panel();
+            lblCoteTexte = new Label();
+            lblEtoilesCote = new Label();
+            lblCoteValeur = new Label();
+            lblDescriptionHeader = new Label();
+            txtDescription = new TextBox();
+            btnAcheter = new Button();
+            btnVisionner = new Button();
+            panelNotation = new Panel();
+            lblNotation = new Label();
+            lblNote1 = new Label();
+            lblNote2 = new Label();
+            lblNote3 = new Label();
+            lblNote4 = new Label();
+            lblNote5 = new Label();
+            btnSauvegarderNote = new Button();
+            btnFermer = new Button();
+            ((System.ComponentModel.ISupportInitialize)pictureBoxFilm).BeginInit();
+            panelCote.SuspendLayout();
+            panelNotation.SuspendLayout();
+            SuspendLayout();
             // 
             // pictureBoxFilm
             // 
-            this.pictureBoxFilm.BorderStyle = BorderStyle.FixedSingle;
-            this.pictureBoxFilm.Location = new Point(30, 30);
-            this.pictureBoxFilm.Name = "pictureBoxFilm";
-            this.pictureBoxFilm.Size = new Size(250, 375);
-            this.pictureBoxFilm.SizeMode = PictureBoxSizeMode.StretchImage;
-            this.pictureBoxFilm.TabIndex = 0;
-            this.pictureBoxFilm.TabStop = false;
-
+            pictureBoxFilm.BorderStyle = BorderStyle.FixedSingle;
+            pictureBoxFilm.Location = new Point(34, 40);
+            pictureBoxFilm.Margin = new Padding(3, 4, 3, 4);
+            pictureBoxFilm.Name = "pictureBoxFilm";
+            pictureBoxFilm.Size = new Size(285, 499);
+            pictureBoxFilm.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBoxFilm.TabIndex = 0;
+            pictureBoxFilm.TabStop = false;
             // 
             // lblTitre
             // 
-            this.lblTitre.AutoSize = false;
-            this.lblTitre.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
-            this.lblTitre.ForeColor = Color.White;
-            this.lblTitre.Location = new Point(310, 30);
-            this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new Size(450, 40);
-            this.lblTitre.TabIndex = 1;
-
+            lblTitre.Font = new Font("Segoe UI", 18F, FontStyle.Bold);
+            lblTitre.ForeColor = Color.White;
+            lblTitre.Location = new Point(354, 40);
+            lblTitre.Name = "lblTitre";
+            lblTitre.Size = new Size(514, 53);
+            lblTitre.TabIndex = 1;
             // 
             // lblAnnee
             // 
-            this.lblAnnee.AutoSize = false;
-            this.lblAnnee.Font = new Font("Segoe UI", 10F);
-            this.lblAnnee.ForeColor = Color.LightGray;
-            this.lblAnnee.Location = new Point(310, 75);
-            this.lblAnnee.Name = "lblAnnee";
-            this.lblAnnee.Size = new Size(450, 25);
-            this.lblAnnee.TabIndex = 2;
-
-            // 
-            // lblRealisateur
-            // 
-            this.lblRealisateur.AutoSize = false;
-            this.lblRealisateur.Font = new Font("Segoe UI", 10F);
-            this.lblRealisateur.ForeColor = Color.LightGray;
-            this.lblRealisateur.Location = new Point(310, 100);
-            this.lblRealisateur.Name = "lblRealisateur";
-            this.lblRealisateur.Size = new Size(450, 25);
-            this.lblRealisateur.TabIndex = 3;
-
+            lblAnnee.Font = new Font("Segoe UI", 10F);
+            lblAnnee.ForeColor = Color.LightGray;
+            lblAnnee.Location = new Point(354, 100);
+            lblAnnee.Name = "lblAnnee";
+            lblAnnee.Size = new Size(514, 33);
+            lblAnnee.TabIndex = 2;
             // 
             // lblGenre
             // 
-            this.lblGenre.AutoSize = false;
-            this.lblGenre.Font = new Font("Segoe UI", 10F);
-            this.lblGenre.ForeColor = Color.LightGray;
-            this.lblGenre.Location = new Point(310, 125);
-            this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new Size(450, 25);
-            this.lblGenre.TabIndex = 4;
-
+            lblGenre.Font = new Font("Segoe UI", 10F);
+            lblGenre.ForeColor = Color.LightGray;
+            lblGenre.Location = new Point(354, 167);
+            lblGenre.Name = "lblGenre";
+            lblGenre.Size = new Size(514, 33);
+            lblGenre.TabIndex = 4;
             // 
             // lblDuree
             // 
-            this.lblDuree.AutoSize = false;
-            this.lblDuree.Font = new Font("Segoe UI", 10F);
-            this.lblDuree.ForeColor = Color.LightGray;
-            this.lblDuree.Location = new Point(310, 150);
-            this.lblDuree.Name = "lblDuree";
-            this.lblDuree.Size = new Size(450, 25);
-            this.lblDuree.TabIndex = 5;
-
+            lblDuree.Font = new Font("Segoe UI", 10F);
+            lblDuree.ForeColor = Color.LightGray;
+            lblDuree.Location = new Point(354, 200);
+            lblDuree.Name = "lblDuree";
+            lblDuree.Size = new Size(514, 33);
+            lblDuree.TabIndex = 5;
+            // 
+            // lblRealisateur
+            // 
+            lblRealisateur.Font = new Font("Segoe UI", 10F);
+            lblRealisateur.ForeColor = Color.LightGray;
+            lblRealisateur.Location = new Point(354, 133);
+            lblRealisateur.Name = "lblRealisateur";
+            lblRealisateur.Size = new Size(514, 33);
+            lblRealisateur.TabIndex = 3;
             // 
             // lblPrix
             // 
-            this.lblPrix.AutoSize = false;
-            this.lblPrix.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
-            this.lblPrix.ForeColor = Color.FromArgb(255, 215, 0);
-            this.lblPrix.Location = new Point(310, 180);
-            this.lblPrix.Name = "lblPrix";
-            this.lblPrix.Size = new Size(450, 30);
-            this.lblPrix.TabIndex = 6;
-
+            lblPrix.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
+            lblPrix.ForeColor = Color.FromArgb(255, 215, 0);
+            lblPrix.Location = new Point(354, 240);
+            lblPrix.Name = "lblPrix";
+            lblPrix.Size = new Size(514, 40);
+            lblPrix.TabIndex = 6;
             // 
             // panelCote
             // 
-            this.panelCote.BackColor = Color.Transparent;
-            this.panelCote.Location = new Point(310, 215);
-            this.panelCote.Name = "panelCote";
-            this.panelCote.Size = new Size(450, 35);
-            this.panelCote.TabIndex = 7;
-
+            panelCote.BackColor = Color.Transparent;
+            panelCote.Controls.Add(lblCoteTexte);
+            panelCote.Controls.Add(lblEtoilesCote);
+            panelCote.Controls.Add(lblCoteValeur);
+            panelCote.Location = new Point(354, 287);
+            panelCote.Margin = new Padding(3, 4, 3, 4);
+            panelCote.Name = "panelCote";
+            panelCote.Size = new Size(514, 47);
+            panelCote.TabIndex = 7;
+            // 
+            // lblCoteTexte
+            // 
+            lblCoteTexte.Location = new Point(0, 0);
+            lblCoteTexte.Name = "lblCoteTexte";
+            lblCoteTexte.Size = new Size(114, 31);
+            lblCoteTexte.TabIndex = 0;
             // 
             // lblEtoilesCote
             // 
-            this.lblEtoilesCote.Font = new Font("Segoe UI", 20F);
-            this.lblEtoilesCote.ForeColor = Color.Gold;
-            this.lblEtoilesCote.Location = new Point(120, 0);
-            this.lblEtoilesCote.Name = "lblEtoilesCote";
-            this.lblEtoilesCote.Size = new Size(200, 30);
-            this.lblEtoilesCote.TabIndex = 1;
-            this.lblEtoilesCote.TextAlign = ContentAlignment.MiddleRight;
-
+            lblEtoilesCote.Font = new Font("Segoe UI", 20F);
+            lblEtoilesCote.ForeColor = Color.Gold;
+            lblEtoilesCote.Location = new Point(137, 0);
+            lblEtoilesCote.Name = "lblEtoilesCote";
+            lblEtoilesCote.Size = new Size(229, 40);
+            lblEtoilesCote.TabIndex = 1;
+            lblEtoilesCote.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblCoteValeur
             // 
-            this.lblCoteValeur.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
-            this.lblCoteValeur.ForeColor = Color.White;
-            this.lblCoteValeur.Location = new Point(280, 5);
-            this.lblCoteValeur.Name = "lblCoteValeur";
-            this.lblCoteValeur.Size = new Size(100, 25);
-            this.lblCoteValeur.TabIndex = 2;
-            this.lblCoteValeur.TextAlign = ContentAlignment.MiddleRight;
-
-            // 
-            // panelCote controls
-            // 
-            Label lblCoteTexte = new Label
-            {
-                Text = "Note moyenne :",
-                Location = new Point(0, 5),
-                Size = new Size(120, 25),
-                Font = new Font("Segoe UI", 10F),
-                ForeColor = Color.LightGray
-            };
-            this.panelCote.Controls.Add(lblCoteTexte);
-            this.panelCote.Controls.Add(this.lblEtoilesCote);
-            this.panelCote.Controls.Add(this.lblCoteValeur);
-
+            lblCoteValeur.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            lblCoteValeur.ForeColor = Color.White;
+            lblCoteValeur.Location = new Point(320, 7);
+            lblCoteValeur.Name = "lblCoteValeur";
+            lblCoteValeur.Size = new Size(114, 33);
+            lblCoteValeur.TabIndex = 2;
+            lblCoteValeur.TextAlign = ContentAlignment.MiddleRight;
             // 
             // lblDescriptionHeader
             // 
-            this.lblDescriptionHeader.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            this.lblDescriptionHeader.ForeColor = Color.White;
-            this.lblDescriptionHeader.Location = new Point(30, 425);
-            this.lblDescriptionHeader.Name = "lblDescriptionHeader";
-            this.lblDescriptionHeader.Size = new Size(730, 25);
-            this.lblDescriptionHeader.TabIndex = 8;
-            this.lblDescriptionHeader.Text = "Synopsis :";
-
+            lblDescriptionHeader.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
+            lblDescriptionHeader.ForeColor = Color.White;
+            lblDescriptionHeader.Location = new Point(34, 567);
+            lblDescriptionHeader.Name = "lblDescriptionHeader";
+            lblDescriptionHeader.Size = new Size(834, 33);
+            lblDescriptionHeader.TabIndex = 8;
+            lblDescriptionHeader.Text = "Synopsis :";
             // 
             // txtDescription
             // 
-            this.txtDescription.BackColor = Color.FromArgb(40, 40, 40);
-            this.txtDescription.BorderStyle = BorderStyle.FixedSingle;
-            this.txtDescription.Font = new Font("Segoe UI", 10F);
-            this.txtDescription.ForeColor = Color.White;
-            this.txtDescription.Location = new Point(30, 455);
-            this.txtDescription.Multiline = true;
-            this.txtDescription.Name = "txtDescription";
-            this.txtDescription.ReadOnly = true;
-            this.txtDescription.ScrollBars = ScrollBars.Vertical;
-            this.txtDescription.Size = new Size(730, 80);
-            this.txtDescription.TabIndex = 9;
-
+            txtDescription.BackColor = Color.FromArgb(40, 40, 40);
+            txtDescription.BorderStyle = BorderStyle.FixedSingle;
+            txtDescription.Font = new Font("Segoe UI", 10F);
+            txtDescription.ForeColor = Color.White;
+            txtDescription.Location = new Point(34, 607);
+            txtDescription.Margin = new Padding(3, 4, 3, 4);
+            txtDescription.Multiline = true;
+            txtDescription.Name = "txtDescription";
+            txtDescription.ReadOnly = true;
+            txtDescription.ScrollBars = ScrollBars.Vertical;
+            txtDescription.Size = new Size(834, 106);
+            txtDescription.TabIndex = 9;
             // 
             // btnAcheter
             // 
-            this.btnAcheter.BackColor = Color.FromArgb(0, 120, 215);
-            this.btnAcheter.Cursor = Cursors.Hand;
-            this.btnAcheter.FlatStyle = FlatStyle.Flat;
-            this.btnAcheter.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            this.btnAcheter.ForeColor = Color.White;
-            this.btnAcheter.Location = new Point(310, 265);
-            this.btnAcheter.Name = "btnAcheter";
-            this.btnAcheter.Size = new Size(200, 45);
-            this.btnAcheter.TabIndex = 10;
-            this.btnAcheter.Text = "💳 Acheter le film";
-            this.btnAcheter.UseVisualStyleBackColor = false;
-            this.btnAcheter.FlatAppearance.BorderSize = 0;
-
+            btnAcheter.BackColor = Color.FromArgb(0, 120, 215);
+            btnAcheter.Cursor = Cursors.Hand;
+            btnAcheter.FlatAppearance.BorderSize = 0;
+            btnAcheter.FlatStyle = FlatStyle.Flat;
+            btnAcheter.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnAcheter.ForeColor = Color.White;
+            btnAcheter.Location = new Point(354, 353);
+            btnAcheter.Margin = new Padding(3, 4, 3, 4);
+            btnAcheter.Name = "btnAcheter";
+            btnAcheter.Size = new Size(229, 60);
+            btnAcheter.TabIndex = 10;
+            btnAcheter.Text = "💳 Acheter le film";
+            btnAcheter.UseVisualStyleBackColor = false;
             // 
             // btnVisionner
             // 
-            this.btnVisionner.BackColor = Color.FromArgb(46, 125, 50);
-            this.btnVisionner.Cursor = Cursors.Hand;
-            this.btnVisionner.FlatStyle = FlatStyle.Flat;
-            this.btnVisionner.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
-            this.btnVisionner.ForeColor = Color.White;
-            this.btnVisionner.Location = new Point(530, 265);
-            this.btnVisionner.Name = "btnVisionner";
-            this.btnVisionner.Size = new Size(200, 45);
-            this.btnVisionner.TabIndex = 11;
-            this.btnVisionner.Text = "▶ Visionner";
-            this.btnVisionner.UseVisualStyleBackColor = false;
-            this.btnVisionner.FlatAppearance.BorderSize = 0;
-
+            btnVisionner.BackColor = Color.FromArgb(46, 125, 50);
+            btnVisionner.Cursor = Cursors.Hand;
+            btnVisionner.FlatAppearance.BorderSize = 0;
+            btnVisionner.FlatStyle = FlatStyle.Flat;
+            btnVisionner.Font = new Font("Segoe UI", 11F, FontStyle.Bold);
+            btnVisionner.ForeColor = Color.White;
+            btnVisionner.Location = new Point(606, 353);
+            btnVisionner.Margin = new Padding(3, 4, 3, 4);
+            btnVisionner.Name = "btnVisionner";
+            btnVisionner.Size = new Size(229, 60);
+            btnVisionner.TabIndex = 11;
+            btnVisionner.Text = "▶ Visionner";
+            btnVisionner.UseVisualStyleBackColor = false;
             // 
             // panelNotation
             // 
-            this.panelNotation.BackColor = Color.FromArgb(30, 30, 30);
-            this.panelNotation.BorderStyle = BorderStyle.FixedSingle;
-            this.panelNotation.Location = new Point(310, 330);
-            this.panelNotation.Name = "panelNotation";
-            this.panelNotation.Size = new Size(450, 80);
-            this.panelNotation.TabIndex = 12;
-            this.panelNotation.Visible = false;
-
+            panelNotation.BackColor = Color.FromArgb(30, 30, 30);
+            panelNotation.BorderStyle = BorderStyle.FixedSingle;
+            panelNotation.Controls.Add(lblNotation);
+            panelNotation.Controls.Add(lblNote1);
+            panelNotation.Controls.Add(lblNote2);
+            panelNotation.Controls.Add(lblNote3);
+            panelNotation.Controls.Add(lblNote4);
+            panelNotation.Controls.Add(lblNote5);
+            panelNotation.Controls.Add(btnSauvegarderNote);
+            panelNotation.Location = new Point(354, 440);
+            panelNotation.Margin = new Padding(3, 4, 3, 4);
+            panelNotation.Name = "panelNotation";
+            panelNotation.Size = new Size(514, 106);
+            panelNotation.TabIndex = 12;
+            panelNotation.Visible = false;
             // 
-            // panelNotation controls
+            // lblNotation
             // 
-            Label lblNotation = new Label
-            {
-                Text = "Votre note :",
-                Location = new Point(10, 10),
-                Size = new Size(100, 25),
-                Font = new Font("Segoe UI", 10F, FontStyle.Bold),
-                ForeColor = Color.White
-            };
-            this.lblNote1 = new Label();
-            this.lblNote2 = new Label();
-            this.lblNote3 = new Label();
-            this.lblNote4 = new Label();
-            this.lblNote5 = new Label();
-
-            this.panelNotation.Controls.Add(lblNotation);
-            this.panelNotation.Controls.Add(this.lblNote1);
-            this.panelNotation.Controls.Add(this.lblNote2);
-            this.panelNotation.Controls.Add(this.lblNote3);
-            this.panelNotation.Controls.Add(this.lblNote4);
-            this.panelNotation.Controls.Add(this.lblNote5);
-
+            lblNotation.Location = new Point(0, 0);
+            lblNotation.Name = "lblNotation";
+            lblNotation.Size = new Size(114, 31);
+            lblNotation.TabIndex = 0;
             // 
             // lblNote1
             // 
-            this.lblNote1.Cursor = Cursors.Hand;
-            this.lblNote1.Font = new Font("Segoe UI", 24F);
-            this.lblNote1.ForeColor = Color.Gray;
-            this.lblNote1.Location = new Point(10, 40);
-            this.lblNote1.Name = "lblNote1";
-            this.lblNote1.Size = new Size(40, 40);
-            this.lblNote1.Text = "★";
+            lblNote1.Cursor = Cursors.Hand;
+            lblNote1.Font = new Font("Segoe UI", 24F);
+            lblNote1.ForeColor = Color.Gray;
+            lblNote1.Location = new Point(11, 53);
+            lblNote1.Name = "lblNote1";
+            lblNote1.Size = new Size(46, 53);
+            lblNote1.TabIndex = 1;
+            lblNote1.Text = "★";
             // 
             // lblNote2
             // 
-            this.lblNote2.Cursor = Cursors.Hand;
-            this.lblNote2.Font = new Font("Segoe UI", 24F);
-            this.lblNote2.ForeColor = Color.Gray;
-            this.lblNote2.Location = new Point(60, 40);
-            this.lblNote2.Name = "lblNote2";
-            this.lblNote2.Size = new Size(40, 40);
-            this.lblNote2.Text = "★";
+            lblNote2.Cursor = Cursors.Hand;
+            lblNote2.Font = new Font("Segoe UI", 24F);
+            lblNote2.ForeColor = Color.Gray;
+            lblNote2.Location = new Point(69, 53);
+            lblNote2.Name = "lblNote2";
+            lblNote2.Size = new Size(46, 53);
+            lblNote2.TabIndex = 2;
+            lblNote2.Text = "★";
             // 
             // lblNote3
             // 
-            this.lblNote3.Cursor = Cursors.Hand;
-            this.lblNote3.Font = new Font("Segoe UI", 24F);
-            this.lblNote3.ForeColor = Color.Gray;
-            this.lblNote3.Location = new Point(110, 40);
-            this.lblNote3.Name = "lblNote3";
-            this.lblNote3.Size = new Size(40, 40);
-            this.lblNote3.Text = "★";
+            lblNote3.Cursor = Cursors.Hand;
+            lblNote3.Font = new Font("Segoe UI", 24F);
+            lblNote3.ForeColor = Color.Gray;
+            lblNote3.Location = new Point(126, 53);
+            lblNote3.Name = "lblNote3";
+            lblNote3.Size = new Size(46, 53);
+            lblNote3.TabIndex = 3;
+            lblNote3.Text = "★";
             // 
             // lblNote4
             // 
-            this.lblNote4.Cursor = Cursors.Hand;
-            this.lblNote4.Font = new Font("Segoe UI", 24F);
-            this.lblNote4.ForeColor = Color.Gray;
-            this.lblNote4.Location = new Point(160, 40);
-            this.lblNote4.Name = "lblNote4";
-            this.lblNote4.Size = new Size(40, 40);
-            this.lblNote4.Text = "★";
+            lblNote4.Cursor = Cursors.Hand;
+            lblNote4.Font = new Font("Segoe UI", 24F);
+            lblNote4.ForeColor = Color.Gray;
+            lblNote4.Location = new Point(183, 53);
+            lblNote4.Name = "lblNote4";
+            lblNote4.Size = new Size(46, 53);
+            lblNote4.TabIndex = 4;
+            lblNote4.Text = "★";
             // 
             // lblNote5
             // 
-            this.lblNote5.Cursor = Cursors.Hand;
-            this.lblNote5.Font = new Font("Segoe UI", 24F);
-            this.lblNote5.ForeColor = Color.Gray;
-            this.lblNote5.Location = new Point(210, 40);
-            this.lblNote5.Name = "lblNote5";
-            this.lblNote5.Size = new Size(40, 40);
-            this.lblNote5.Text = "★";
-
+            lblNote5.Cursor = Cursors.Hand;
+            lblNote5.Font = new Font("Segoe UI", 24F);
+            lblNote5.ForeColor = Color.Gray;
+            lblNote5.Location = new Point(240, 53);
+            lblNote5.Name = "lblNote5";
+            lblNote5.Size = new Size(46, 53);
+            lblNote5.TabIndex = 5;
+            lblNote5.Text = "★";
             // 
             // btnSauvegarderNote
             // 
-            this.btnSauvegarderNote.BackColor = Color.FromArgb(0, 120, 215);
-            this.btnSauvegarderNote.Cursor = Cursors.Hand;
-            this.btnSauvegarderNote.FlatStyle = FlatStyle.Flat;
-            this.btnSauvegarderNote.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
-            this.btnSauvegarderNote.ForeColor = Color.White;
-            this.btnSauvegarderNote.Location = new Point(270, 40);
-            this.btnSauvegarderNote.Name = "btnSauvegarderNote";
-            this.btnSauvegarderNote.Size = new Size(160, 35);
-            this.btnSauvegarderNote.TabIndex = 0;
-            this.btnSauvegarderNote.Text = "Sauvegarder";
-            this.btnSauvegarderNote.UseVisualStyleBackColor = false;
-            this.btnSauvegarderNote.FlatAppearance.BorderSize = 0;
-            this.panelNotation.Controls.Add(this.btnSauvegarderNote);
-
+            btnSauvegarderNote.BackColor = Color.FromArgb(0, 120, 215);
+            btnSauvegarderNote.Cursor = Cursors.Hand;
+            btnSauvegarderNote.FlatAppearance.BorderSize = 0;
+            btnSauvegarderNote.FlatStyle = FlatStyle.Flat;
+            btnSauvegarderNote.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
+            btnSauvegarderNote.ForeColor = Color.White;
+            btnSauvegarderNote.Location = new Point(309, 53);
+            btnSauvegarderNote.Margin = new Padding(3, 4, 3, 4);
+            btnSauvegarderNote.Name = "btnSauvegarderNote";
+            btnSauvegarderNote.Size = new Size(183, 47);
+            btnSauvegarderNote.TabIndex = 0;
+            btnSauvegarderNote.Text = "Sauvegarder";
+            btnSauvegarderNote.UseVisualStyleBackColor = false;
             // 
             // btnFermer
             // 
-            this.btnFermer.BackColor = Color.FromArgb(60, 60, 60);
-            this.btnFermer.Cursor = Cursors.Hand;
-            this.btnFermer.FlatStyle = FlatStyle.Flat;
-            this.btnFermer.Font = new Font("Segoe UI", 10F);
-            this.btnFermer.ForeColor = Color.White;
-            this.btnFermer.Location = new Point(630, 555);
-            this.btnFermer.Name = "btnFermer";
-            this.btnFermer.Size = new Size(130, 35);
-            this.btnFermer.TabIndex = 13;
-            this.btnFermer.Text = "Fermer";
-            this.btnFermer.UseVisualStyleBackColor = false;
-            this.btnFermer.FlatAppearance.BorderSize = 0;
-            this.btnFermer.Click += new System.EventHandler(this.BtnFermer_Click);
-
+            btnFermer.BackColor = Color.FromArgb(60, 60, 60);
+            btnFermer.Cursor = Cursors.Hand;
+            btnFermer.FlatAppearance.BorderSize = 0;
+            btnFermer.FlatStyle = FlatStyle.Flat;
+            btnFermer.Font = new Font("Segoe UI", 10F);
+            btnFermer.ForeColor = Color.White;
+            btnFermer.Location = new Point(720, 740);
+            btnFermer.Margin = new Padding(3, 4, 3, 4);
+            btnFermer.Name = "btnFermer";
+            btnFermer.Size = new Size(149, 47);
+            btnFermer.TabIndex = 13;
+            btnFermer.Text = "Fermer";
+            btnFermer.UseVisualStyleBackColor = false;
+            btnFermer.Click += BtnFermer_Click;
             // 
-            // Add all controls to form
+            // DetailsFilm
             // 
-            this.Controls.Add(this.pictureBoxFilm);
-            this.Controls.Add(this.lblTitre);
-            this.Controls.Add(this.lblAnnee);
-            this.Controls.Add(this.lblRealisateur);
-            this.Controls.Add(this.lblGenre);
-            this.Controls.Add(this.lblDuree);
-            this.Controls.Add(this.lblPrix);
-            this.Controls.Add(this.panelCote);
-            this.Controls.Add(this.lblDescriptionHeader);
-            this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.btnAcheter);
-            this.Controls.Add(this.btnVisionner);
-            this.Controls.Add(this.panelNotation);
-            this.Controls.Add(this.btnFermer);
-
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxFilm)).EndInit();
-            this.panelCote.ResumeLayout(false);
-            this.panelNotation.ResumeLayout(false);
-            this.ResumeLayout(false);
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(20, 20, 20);
+            ClientSize = new Size(914, 800);
+            Controls.Add(pictureBoxFilm);
+            Controls.Add(lblTitre);
+            Controls.Add(lblAnnee);
+            Controls.Add(lblRealisateur);
+            Controls.Add(lblGenre);
+            Controls.Add(lblDuree);
+            Controls.Add(lblPrix);
+            Controls.Add(panelCote);
+            Controls.Add(lblDescriptionHeader);
+            Controls.Add(txtDescription);
+            Controls.Add(btnAcheter);
+            Controls.Add(btnVisionner);
+            Controls.Add(panelNotation);
+            Controls.Add(btnFermer);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(3, 4, 3, 4);
+            MaximizeBox = false;
+            Name = "DetailsFilm";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "VisionFlix - Détails du film";
+            ((System.ComponentModel.ISupportInitialize)pictureBoxFilm).EndInit();
+            panelCote.ResumeLayout(false);
+            panelNotation.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label lblCoteTexte;
+        private Label lblNotation;
     }
 }

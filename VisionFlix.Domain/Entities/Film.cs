@@ -48,7 +48,6 @@ namespace VisionFlix.Domain.Entities
 
         public DateTime DateAjout { get; set; } = DateTime.Now;
 
-        // Navigation properties (pour Entity Framework)
         public virtual ICollection<Achat>? Achats { get; set; }
         public virtual ICollection<Visionnement>? Visionnements { get; set; }
         public virtual ICollection<Notation>? Notations { get; set; }

@@ -23,7 +23,6 @@ namespace VisionFlix.Domain.Entities
 
         public bool EstComplete { get; set; } = false;
 
-        // Navigation properties
         [ForeignKey("UtilisateurId")]
         public virtual Utilisateur Utilisateur { get; set; } = null!;
 

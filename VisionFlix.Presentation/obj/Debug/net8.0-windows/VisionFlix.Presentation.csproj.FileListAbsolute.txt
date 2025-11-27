@@ -302,3 +302,4 @@ C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Presentation
 C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Presentation\obj\Debug\net8.0-windows\VisionFlix.Presentation.genruntimeconfig.cache
 C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Presentation\obj\Debug\net8.0-windows\ref\VisionFlix.Presentation.dll
 C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Presentation\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Presentation\obj\Debug\net8.0-windows\VisionFlix.Presentation.Forms.DetailsFilm.resources

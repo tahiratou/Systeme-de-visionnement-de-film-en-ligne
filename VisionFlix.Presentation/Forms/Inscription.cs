@@ -1,3 +1,4 @@
+using Microsoft.Extensions.DependencyInjection;
 using VisionFlix.Application.Interfaces;
 using VisionFlix.Domain.Entities;
 
@@ -6,13 +7,14 @@ namespace VisionFlix.Presentation.Forms
     public partial class Inscription : Form
     {
         private readonly IUtilisateurService _utilisateurService;
+		private readonly IServiceProvider _serviceProvider;
 
-        // CONSTRUCTEUR AVEC INJECTION DE DÉPENDANCES
-        public Inscription(IUtilisateurService utilisateurService)
+		// CONSTRUCTEUR AVEC INJECTION DE DÉPENDANCES
+		public Inscription(IUtilisateurService utilisateurService)
         {
             InitializeComponent();
             this.Text = "VisionFlix - Inscription";
-            
+
             _utilisateurService = utilisateurService;
         }
 
@@ -81,7 +83,7 @@ namespace VisionFlix.Presentation.Forms
 
                 await _utilisateurService.CreateUtilisateurAsync(nouvelUtilisateur);
 
-                MessageBox.Show("Inscription réussie! Vous pouvez maintenant vous connecter.", 
+                MessageBox.Show("Inscription réussie! Vous pouvez maintenant vous connecter.",
                     "Succès", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                 this.DialogResult = DialogResult.OK;
@@ -93,7 +95,13 @@ namespace VisionFlix.Presentation.Forms
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-    }
+
+		private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+		{
+			this.DialogResult = DialogResult.Cancel;  
+			this.Close();
+		}
+	}
 }
 
 /* 
