@@ -15,3 +15,21 @@ C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF2320
 C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFlix.Infrastructure.pdb
 C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFlix.Infrastructure.genruntimeconfig.cache
 C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Infrastructure\obj\Debug\net8.0\ref\VisionFlix.Infrastructure.dll
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\bin\Debug\net8.0\VisionFlix.Infrastructure.deps.json
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\bin\Debug\net8.0\VisionFlix.Infrastructure.runtimeconfig.json
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\bin\Debug\net8.0\VisionFlix.Infrastructure.dll
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\bin\Debug\net8.0\VisionFlix.Infrastructure.pdb
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\bin\Debug\net8.0\VisionFlix.Domain.dll
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\bin\Debug\net8.0\VisionFlix.Domain.pdb
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFlix.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFlix.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFlix.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFlix.Infrastructure.AssemblyInfo.cs
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFlix.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFlix.Infrastructure.sourcelink.json
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFl.7E29CCF8.Up2Date
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFlix.Infrastructure.dll
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\obj\Debug\net8.0\refint\VisionFlix.Infrastructure.dll
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFlix.Infrastructure.pdb
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFlix.Infrastructure.genruntimeconfig.cache
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Infrastructure\obj\Debug\net8.0\ref\VisionFlix.Infrastructure.dll

@@ -9,3 +9,15 @@ C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF2320
 C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\obj\Debug\net8.0\refint\VisionFlix.Domain.dll
 C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.pdb
 C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\obj\Debug\net8.0\ref\VisionFlix.Domain.dll
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\bin\Debug\net8.0\VisionFlix.Domain.deps.json
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\bin\Debug\net8.0\VisionFlix.Domain.dll
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\bin\Debug\net8.0\VisionFlix.Domain.pdb
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.AssemblyInfoInputs.cache
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.AssemblyInfo.cs
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.csproj.CoreCompileInputs.cache
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.sourcelink.json
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.dll
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\obj\Debug\net8.0\refint\VisionFlix.Domain.dll
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.pdb
+C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\obj\Debug\net8.0\ref\VisionFlix.Domain.dll

@@ -22,12 +22,12 @@ namespace VisionFlix.Presentation
 
             try
             {
-                var configuration = new ConfigurationBuilder()
-                    .SetBasePath(Directory.GetCurrentDirectory())
-                    .AddJsonFile("VisionFlix.Presentation.appsettings.json", optional: false, reloadOnChange: true)
-                    .Build();
+				var configuration = new ConfigurationBuilder()
+	                    .SetBasePath(Directory.GetCurrentDirectory())
+	                    .AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)  
+	                    .Build();
 
-                var services = new ServiceCollection();
+				var services = new ServiceCollection();
 
                 // DbContext
                 services.AddDbContext<VisionFlixDbContext>(options =>
