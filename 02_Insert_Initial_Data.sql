@@ -48,11 +48,7 @@ GO
 INSERT INTO Langues (Nom, Code, EstActive)
 VALUES 
     ('Français', 'fr', 1),
-    ('Anglais', 'en', 1),
-    ('Espagnol', 'es', 1),
-    ('Allemand', 'de', 1),
-    ('Italien', 'it', 1),
-    ('Japonais', 'ja', 1);
+    ('Anglais', 'en', 1)
 GO
 
 PRINT 'Langues insérées: ' + CAST(@@ROWCOUNT AS VARCHAR);

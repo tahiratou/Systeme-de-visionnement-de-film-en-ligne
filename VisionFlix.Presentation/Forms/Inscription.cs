@@ -1,197 +1,245 @@
-using Microsoft.Extensions.DependencyInjection;
-using VisionFlix.Application.Interfaces;
 using VisionFlix.Domain.Entities;
+using VisionFlix.Application.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
+using System.Text.RegularExpressions;
 
 namespace VisionFlix.Presentation.Forms
 {
     public partial class Inscription : Form
     {
-        private readonly IUtilisateurService _utilisateurService;
         private readonly IServiceProvider _serviceProvider;
+        private readonly IUtilisateurService _utilisateurService;
 
-        // CONSTRUCTEUR AVEC INJECTION DE DÉPENDANCES
-        public Inscription(IUtilisateurService utilisateurService, IServiceProvider serviceProvider)
+        public Inscription(IServiceProvider serviceProvider)
         {
             InitializeComponent();
             this.Text = "VisionFlix - Inscription";
-            _utilisateurService = utilisateurService;
+
             _serviceProvider = serviceProvider;
+            _utilisateurService = _serviceProvider.GetRequiredService<IUtilisateurService>();
+
+            // Les événements sont déjà attachés dans InitializeComponent()
+            // btnLogin.Click += btnLogin_Click;
+            // linkLabel2.LinkClicked += linkLabel2_LinkClicked;
         }
 
-        // BOUTON INSCRIPTION (S'ENREGISTRER)
+        /// <summary>
+        /// Gère l'inscription d'un nouvel utilisateur
+        /// </summary>
         private async void btnLogin_Click(object? sender, EventArgs e)
         {
-            // Désactiver le bouton pendant le traitement
-            btnLogin.Enabled = false;
-            btnLogin.Text = "Inscription en cours...";
-
             try
             {
-                // ===== RÉCUPÉRER LES VALEURS - NOMS LOGIQUES =====
-
-                // COLONNE DE GAUCHE
-                string nom = txtNom.Text.Trim();
-                string prenom = txtPrenom.Text.Trim();
-                string email = txtEmail.Text.Trim();
-                string telephone = txtTelephone.Text.Trim();
-
-                // COLONNE DE DROITE
-                string adresse = txtAdresse.Text.Trim();
-                string nomUtilisateur = txtNomUtilisateur.Text.Trim();
-                string motDePasse = txtMotDePasse.Text;
-                string confirmation = txtConfirmation.Text;
-
-                // ===== VALIDATION DES CHAMPS =====
-
-                // Validation Nom
-                if (string.IsNullOrWhiteSpace(nom))
-                {
-                    MessageBox.Show("Le nom est obligatoire.", "Erreur de validation",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtNom.Focus();
+                // ✅ VALIDATION DES CHAMPS
+                if (!ValiderChamps())
                     return;
-                }
 
-                // Validation Prénom
-                if (string.IsNullOrWhiteSpace(prenom))
-                {
-                    MessageBox.Show("Le prénom est obligatoire.", "Erreur de validation",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtPrenom.Focus();
-                    return;
-                }
-
-                // Validation Email
-                if (string.IsNullOrWhiteSpace(email))
-                {
-                    MessageBox.Show("L'email est obligatoire.", "Erreur de validation",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtEmail.Focus();
-                    return;
-                }
-
-                if (!email.Contains("@") || !email.Contains("."))
-                {
-                    MessageBox.Show("Veuillez entrer un email valide (exemple: utilisateur@domaine.com).",
-                        "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtEmail.Focus();
-                    return;
-                }
-
-                // Validation Nom d'utilisateur
-                if (string.IsNullOrWhiteSpace(nomUtilisateur))
-                {
-                    MessageBox.Show("Le nom d'utilisateur est obligatoire.", "Erreur de validation",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtNomUtilisateur.Focus();
-                    return;
-                }
-
-                if (nomUtilisateur.Length < 3)
-                {
-                    MessageBox.Show("Le nom d'utilisateur doit contenir au moins 3 caractères.",
-                        "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtNomUtilisateur.Focus();
-                    return;
-                }
-
-                // Validation Mot de passe
-                if (string.IsNullOrWhiteSpace(motDePasse))
-                {
-                    MessageBox.Show("Le mot de passe est obligatoire.", "Erreur de validation",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtMotDePasse.Focus();
-                    return;
-                }
-
-                if (motDePasse.Length < 6)
-                {
-                    MessageBox.Show("Le mot de passe doit contenir au moins 6 caractères.",
-                        "Erreur de validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtMotDePasse.Focus();
-                    return;
-                }
-
-                // Validation Confirmation
-                if (motDePasse != confirmation)
-                {
-                    MessageBox.Show("Les mots de passe ne correspondent pas.", "Erreur de validation",
-                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtConfirmation.Focus();
-                    return;
-                }
-
-                // ===== VÉRIFIER SI L'EMAIL EXISTE DÉJÀ =====
-                bool emailExiste = await _utilisateurService.EmailExistsAsync(email);
-
-                if (emailExiste)
-                {
-                    MessageBox.Show("Un compte avec cet email existe déjà.\nVeuillez utiliser un autre email ou vous connecter.",
-                        "Email déjà utilisé", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    txtEmail.Focus();
-                    txtEmail.SelectAll();
-                    return;
-                }
-
-                // ===== CRÉER LE NOUVEL UTILISATEUR =====
+                // ✅ CRÉER L'UTILISATEUR
                 var nouvelUtilisateur = new Utilisateur
                 {
-                    NomUtilisateur = nomUtilisateur,
-                    Nom = nom,
-                    Prenom = prenom,
-                    Email = email,
-                    Telephone = telephone ?? "",
-                    Adresse = adresse ?? "",
-                    MotDePasse = motDePasse,          // TODO: Hasher le mot de passe en production!
-                    Solde = 50.00m,                   // Bonus de bienvenue: 50$
+                    NomUtilisateur = txtNomUtilisateur.Text.Trim(),
+                    Nom = txtNom.Text.Trim(),
+                    Prenom = txtPrenom.Text.Trim(),
+                    Email = txtEmail.Text.Trim().ToLower(),
+                    Telephone = txtTelephone.Text.Trim(),
+                    Adresse = txtAdresse.Text.Trim(),
+                    MotDePasse = txtMotDePasse.Text, // Sera hashé par le service
+                    Solde = 0,
                     EstAdministrateur = false,
                     EstAbonne = false,
-                    PlanAbonnementId = null,
-                    DateInscription = DateTime.Now,
-                    DateExpirationAbonnement = null
+                    DateInscription = DateTime.Now
                 };
 
-                // ===== ENREGISTRER DANS LA BASE DE DONNÉES SQL SERVER =====
-                await _utilisateurService.CreateUtilisateurAsync(nouvelUtilisateur);
+                // ✅ ENREGISTRER DANS LA BASE DE DONNÉES
+                var utilisateurCree = await _utilisateurService.CreateUtilisateurAsync(nouvelUtilisateur);
 
-                // ===== SUCCÈS =====
+                if (utilisateurCree != null)
+                {
+                    MessageBox.Show(
+                        "Inscription réussie ! Vous pouvez maintenant vous connecter.",
+                        "Succès",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information
+                    );
+
+                    // ✅ OUVRIR LA PAGE DE CONNEXION
+                    OuvrirPageConnexion();
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "Une erreur est survenue lors de l'inscription. Veuillez réessayer.",
+                        "Erreur",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Error
+                    );
+                }
+            }
+            catch (InvalidOperationException ex)
+            {
+                // Erreurs de validation du service
                 MessageBox.Show(
-                    $"Inscription réussie!\n\n" +
-                    $"Bienvenue {prenom} {nom}!\n\n" +
-                    $"Nom d'utilisateur: {nomUtilisateur}\n" +
-                    $"Vous avez reçu un bonus de bienvenue de 50.00$.\n\n" +
-                    $"Vous pouvez maintenant vous connecter avec votre email et mot de passe.",
-                    "Inscription réussie",
+                    ex.Message,
+                    "Validation",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Information);
-
-                // Fermer le formulaire et retourner à la connexion
-                this.DialogResult = DialogResult.OK;
-                this.Close();
+                    MessageBoxIcon.Warning
+                );
             }
             catch (Exception ex)
             {
                 MessageBox.Show(
-                    $"Erreur lors de l'inscription:\n\n{ex.Message}\n\n" +
-                    $"Détails: {ex.InnerException?.Message}",
+                    $"Erreur lors de l'inscription:\n{ex.Message}",
                     "Erreur",
                     MessageBoxButtons.OK,
-                    MessageBoxIcon.Error);
-            }
-            finally
-            {
-                // Réactiver le bouton
-                btnLogin.Enabled = true;
-                btnLogin.Text = "S'inscrire";
+                    MessageBoxIcon.Error
+                );
+
+                System.Diagnostics.Debug.WriteLine($"❌ Erreur inscription: {ex.Message}");
             }
         }
 
-        // LIEN "SE CONNECTER" (Retour à la connexion)
-        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        /// <summary>
+        /// Gère le clic sur le lien "Se connecter"
+        /// </summary>
+        private void linkLabel2_LinkClicked(object? sender, LinkLabelLinkClickedEventArgs e)
         {
-            // Annuler l'inscription et retourner à la connexion
-            this.DialogResult = DialogResult.Cancel;
-            this.Close();
+            OuvrirPageConnexion();
+        }
+
+        /// <summary>
+        /// Ouvre la page de connexion et ferme la page d'inscription
+        /// </summary>
+        private void OuvrirPageConnexion()
+        {
+            try
+            {
+                // ✅ Créer le formulaire de connexion
+                Connexion connexionForm = _serviceProvider.GetRequiredService<Connexion>();
+
+                // ✅ FERMER la page d'inscription
+                this.Hide();
+
+                // ✅ Afficher la page de connexion
+                if (connexionForm.ShowDialog() == DialogResult.OK)
+                {
+                    // Si connexion réussie, fermer définitivement l'inscription
+                    this.DialogResult = DialogResult.OK;
+                    this.Close();
+                }
+                else
+                {
+                    // Si connexion annulée, réafficher l'inscription
+                    this.Show();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Erreur lors de l'ouverture de la connexion:\n{ex.Message}",
+                    "Erreur",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+
+                this.Show(); // Réafficher l'inscription en cas d'erreur
+            }
+        }
+
+        /// <summary>
+        /// Valide tous les champs du formulaire
+        /// </summary>
+        private bool ValiderChamps()
+        {
+            // ✅ VALIDATION NOM
+            if (string.IsNullOrWhiteSpace(txtNom.Text))
+            {
+                MessageBox.Show("Veuillez entrer votre nom.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNom.Focus();
+                return false;
+            }
+
+            // ✅ VALIDATION PRÉNOM
+            if (string.IsNullOrWhiteSpace(txtPrenom.Text))
+            {
+                MessageBox.Show("Veuillez entrer votre prénom.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtPrenom.Focus();
+                return false;
+            }
+
+            // ✅ VALIDATION EMAIL
+            if (string.IsNullOrWhiteSpace(txtEmail.Text))
+            {
+                MessageBox.Show("Veuillez entrer votre email.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEmail.Focus();
+                return false;
+            }
+
+            if (!EstEmailValide(txtEmail.Text))
+            {
+                MessageBox.Show("Format d'email invalide.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtEmail.Focus();
+                return false;
+            }
+
+            // ✅ VALIDATION NOM D'UTILISATEUR
+            if (string.IsNullOrWhiteSpace(txtNomUtilisateur.Text))
+            {
+                MessageBox.Show("Veuillez entrer un nom d'utilisateur.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNomUtilisateur.Focus();
+                return false;
+            }
+
+            if (txtNomUtilisateur.Text.Length < 3)
+            {
+                MessageBox.Show("Le nom d'utilisateur doit contenir au moins 3 caractères.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtNomUtilisateur.Focus();
+                return false;
+            }
+
+            // ✅ VALIDATION MOT DE PASSE
+            if (string.IsNullOrWhiteSpace(txtMotDePasse.Text))
+            {
+                MessageBox.Show("Veuillez entrer un mot de passe.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMotDePasse.Focus();
+                return false;
+            }
+
+            if (txtMotDePasse.Text.Length < 6)
+            {
+                MessageBox.Show("Le mot de passe doit contenir au moins 6 caractères.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMotDePasse.Focus();
+                return false;
+            }
+
+            // ✅ VALIDATION CONFIRMATION MOT DE PASSE
+            if (txtMotDePasse.Text != txtConfirmation.Text)
+            {
+                MessageBox.Show("Les mots de passe ne correspondent pas.", "Validation", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtConfirmation.Focus();
+                return false;
+            }
+
+            return true;
+        }
+
+        /// <summary>
+        /// Vérifie si l'email est valide
+        /// </summary>
+        private bool EstEmailValide(string email)
+        {
+            if (string.IsNullOrWhiteSpace(email))
+                return false;
+
+            try
+            {
+                // Pattern regex pour email
+                string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
+                return Regex.IsMatch(email, pattern, RegexOptions.IgnoreCase);
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }

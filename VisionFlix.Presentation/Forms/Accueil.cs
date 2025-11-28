@@ -30,7 +30,7 @@ namespace VisionFlix.Presentation.Forms
 
         private void InitializeData()
         {
-            // Configuration initiale des combos (gardez votre code)
+            // Configuration initiale des combos
             cmbGenre.SelectedIndex = 0;
             cmbYear.SelectedIndex = 0;
             cmbRating.SelectedIndex = 0;
@@ -38,7 +38,7 @@ namespace VisionFlix.Presentation.Forms
 
         private void SetupEventHandlers()
         {
-            // Gardez vos event handlers existants
+            // Event handlers
             btnSearch.Click += BtnSearch_Click;
             txtSearch.KeyPress += TxtSearch_KeyPress;
             btnApplyFilters.Click += BtnApplyFilters_Click;
@@ -114,7 +114,7 @@ namespace VisionFlix.Presentation.Forms
         private void OnFilmCardClicked(object? sender, Film film)
         {
             var detailsForm = _serviceProvider.GetRequiredService<DetailsFilm>();
-            
+
             // Passer le film au formulaire DetailsFilm
             detailsForm.SetFilm(film);
             detailsForm.ShowDialog();
@@ -153,15 +153,43 @@ namespace VisionFlix.Presentation.Forms
 
         private void BtnProfil_Click(object? sender, EventArgs e)
         {
+            // ✅ VÉRIFIER QUE L'UTILISATEUR EST CONNECTÉ
             if (_authService.CurrentUser == null)
             {
-                MessageBox.Show("Veuillez vous connecter.", "Erreur",
-                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(
+                    "Veuillez vous connecter.",
+                    "Erreur",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Warning
+                );
                 return;
             }
 
-            var profilForm = _serviceProvider.GetRequiredService<ProfilUtilisateur>();
-            profilForm.ShowDialog();
+            try
+            {
+                // ✅ CRÉER ProfilUtilisateur EN PASSANT L'UTILISATEUR MANUELLEMENT
+                // ProfilUtilisateur a besoin de:
+                // 1. Utilisateur (l'utilisateur connecté)
+                // 2. IServiceProvider (pour les dépendances)
+
+                var profilForm = new ProfilUtilisateur(
+                    _authService.CurrentUser,    // ✅ Passer l'utilisateur connecté
+                    _serviceProvider             // ✅ Passer le ServiceProvider
+                );
+
+                profilForm.ShowDialog();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    $"Erreur lors de l'ouverture du profil:\n{ex.Message}",
+                    "Erreur",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error
+                );
+
+                System.Diagnostics.Debug.WriteLine($"❌ Erreur profil: {ex.Message}");
+            }
         }
 
         private static double GetMinRatingFromSelection(int index)
@@ -177,11 +205,3 @@ namespace VisionFlix.Presentation.Forms
         }
     }
 }
-
-/*
- * INSTRUCTIONS:
- * 1. GARDEZ votre Accueil.Designer.cs TEL QUEL
- * 2. Remplacez le contenu de Accueil.cs
- * 3. Gardez votre UserControl FicheFilm.cs tel quel
- * 4. Assurez-vous que FicheFilm a une méthode SetFilmData(Film film)
- */

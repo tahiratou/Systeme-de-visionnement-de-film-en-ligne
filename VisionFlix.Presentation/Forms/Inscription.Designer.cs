@@ -2,9 +2,6 @@
 {
     partial class Inscription
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
@@ -30,148 +27,177 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inscription));
             label1 = new Label();
-
-            // ✅ RENOMMAGE: nom → txtNomUtilisateur
-            txtNomUtilisateur = new TextBox();
-            // ✅ RENOMMAGE: textBox2 → txtNom
             txtNom = new TextBox();
-            // ✅ RENOMMAGE: textBox3 → txtPrenom
             txtPrenom = new TextBox();
-            // ✅ RENOMMAGE: textBox4 → txtEmail
             txtEmail = new TextBox();
-            // ✅ RENOMMAGE: textBox1 → txtTelephone
             txtTelephone = new TextBox();
-            // ✅ RENOMMAGE: textBox5 → txtAdresse
             txtAdresse = new TextBox();
-            // ✅ RENOMMAGE: textBox6 → txtMotDePasse
+            txtNomUtilisateur = new TextBox();
             txtMotDePasse = new TextBox();
-            // ✅ RENOMMAGE: textBox7 → txtConfirmation
             txtConfirmation = new TextBox();
-
             btnLogin = new Button();
             label2 = new Label();
             linkLabel2 = new LinkLabel();
             SuspendLayout();
 
-            // 
-            // label1
-            // 
-            resources.ApplyResources(label1, "label1");
+            
+            label1.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
+            label1.AutoSize = true;
             label1.BackColor = Color.Transparent;
+            label1.Font = new Font("Segoe UI", 16.2F, FontStyle.Bold, GraphicsUnit.Point, 0);
             label1.ForeColor = SystemColors.Control;
+            label1.Location = new Point(240, 50);
             label1.Name = "label1";
+            label1.Size = new Size(122, 30);
+            label1.TabIndex = 0;
+            label1.Text = "Inscription";
+            label1.TextAlign = ContentAlignment.TopCenter;
 
-            // 
-            // txtNomUtilisateur (ancien "nom")
-            // 
-            resources.ApplyResources(txtNomUtilisateur, "nom");  // ✅ Utilise les ressources de "nom" pour garder la position
-            txtNomUtilisateur.Name = "txtNomUtilisateur";
-            txtNomUtilisateur.PlaceholderText = " Nom d'utilisateur";
-
-            // 
-            // txtNom (ancien "textBox2")
-            // 
-            resources.ApplyResources(txtNom, "textBox2");  // ✅ Utilise les ressources de "textBox2"
+            
+            txtNom.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            txtNom.BorderStyle = BorderStyle.FixedSingle;
+            txtNom.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNom.Location = new Point(80, 125);
             txtNom.Name = "txtNom";
             txtNom.PlaceholderText = " Nom";
+            txtNom.Size = new Size(200, 29);
+            txtNom.TabIndex = 1;
 
-            // 
-            // txtPrenom (ancien "textBox3")
-            // 
-            resources.ApplyResources(txtPrenom, "textBox3");  // ✅ Utilise les ressources de "textBox3"
+            txtPrenom.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            txtPrenom.BorderStyle = BorderStyle.FixedSingle;
+            txtPrenom.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtPrenom.Location = new Point(80, 165);
             txtPrenom.Name = "txtPrenom";
             txtPrenom.PlaceholderText = " Prénom";
+            txtPrenom.Size = new Size(200, 29);
+            txtPrenom.TabIndex = 2;
 
-            // 
-            // txtEmail (ancien "textBox4")
-            // 
-            resources.ApplyResources(txtEmail, "textBox4");  // ✅ Utilise les ressources de "textBox4"
+            
+            txtEmail.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            txtEmail.BorderStyle = BorderStyle.FixedSingle;
+            txtEmail.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtEmail.Location = new Point(80, 205);
             txtEmail.Name = "txtEmail";
             txtEmail.PlaceholderText = " Email";
+            txtEmail.Size = new Size(200, 29);
+            txtEmail.TabIndex = 3;
 
-            // 
-            // txtTelephone (ancien "textBox1")
-            // 
-            resources.ApplyResources(txtTelephone, "textBox1");  // ✅ Utilise les ressources de "textBox1"
+            
+            txtTelephone.Anchor = AnchorStyles.Top | AnchorStyles.Left;
+            txtTelephone.BorderStyle = BorderStyle.FixedSingle;
+            txtTelephone.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtTelephone.Location = new Point(80, 245);
             txtTelephone.Name = "txtTelephone";
             txtTelephone.PlaceholderText = " Téléphone (optionnel)";
+            txtTelephone.Size = new Size(200, 29);
+            txtTelephone.TabIndex = 4;
 
-            // 
-            // txtAdresse (ancien "textBox5")
-            // 
-            resources.ApplyResources(txtAdresse, "textBox5");  // ✅ Utilise les ressources de "textBox5"
+            
+            txtAdresse.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtAdresse.BorderStyle = BorderStyle.FixedSingle;
+            txtAdresse.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtAdresse.Location = new Point(344, 125);
             txtAdresse.Name = "txtAdresse";
             txtAdresse.PlaceholderText = " Adresse (optionnel)";
+            txtAdresse.Size = new Size(200, 29);
+            txtAdresse.TabIndex = 5;
 
-            // 
-            // txtMotDePasse (ancien "textBox6")
-            // 
-            resources.ApplyResources(txtMotDePasse, "textBox6");  // ✅ Utilise les ressources de "textBox6"
+            
+            txtNomUtilisateur.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtNomUtilisateur.BorderStyle = BorderStyle.FixedSingle;
+            txtNomUtilisateur.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtNomUtilisateur.Location = new Point(344, 165);
+            txtNomUtilisateur.Name = "txtNomUtilisateur";
+            txtNomUtilisateur.PlaceholderText = " Nom d'utilisateur";
+            txtNomUtilisateur.Size = new Size(200, 29);
+            txtNomUtilisateur.TabIndex = 6;
+
+            
+            txtMotDePasse.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtMotDePasse.BorderStyle = BorderStyle.FixedSingle;
+            txtMotDePasse.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtMotDePasse.Location = new Point(344, 205);
             txtMotDePasse.Name = "txtMotDePasse";
             txtMotDePasse.PasswordChar = '*';
             txtMotDePasse.PlaceholderText = " Mot de passe";
+            txtMotDePasse.Size = new Size(200, 29);
+            txtMotDePasse.TabIndex = 7;
 
-            // 
-            // txtConfirmation (ancien "textBox7")
-            // 
-            resources.ApplyResources(txtConfirmation, "textBox7");  // ✅ Utilise les ressources de "textBox7"
+            
+            txtConfirmation.Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            txtConfirmation.BorderStyle = BorderStyle.FixedSingle;
+            txtConfirmation.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            txtConfirmation.Location = new Point(344, 245);
             txtConfirmation.Name = "txtConfirmation";
             txtConfirmation.PasswordChar = '*';
             txtConfirmation.PlaceholderText = " Confirmer le mot de passe";
+            txtConfirmation.Size = new Size(200, 29);
+            txtConfirmation.TabIndex = 8;
 
-            // 
-            // btnLogin
-            // 
-            resources.ApplyResources(btnLogin, "btnLogin");
+            
+            btnLogin.Anchor = AnchorStyles.Top | AnchorStyles.Left | AnchorStyles.Right;
             btnLogin.BackColor = Color.FromArgb(200, 50, 50);
             btnLogin.FlatAppearance.BorderColor = Color.White;
+            btnLogin.FlatStyle = FlatStyle.Flat;
+            btnLogin.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnLogin.ForeColor = SystemColors.Control;
+            btnLogin.Location = new Point(212, 300);
             btnLogin.Name = "btnLogin";
+            btnLogin.Size = new Size(200, 32);
+            btnLogin.TabIndex = 9;
             btnLogin.Text = "S'inscrire";
             btnLogin.UseVisualStyleBackColor = false;
             btnLogin.Click += btnLogin_Click;
 
-            // 
-            // label2
-            // 
-            resources.ApplyResources(label2, "label2");
+            
+            label2.AutoSize = true;
             label2.BackColor = Color.Transparent;
+            label2.Font = new Font("Segoe UI", 7.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             label2.ForeColor = SystemColors.Control;
+            label2.Location = new Point(225, 345);
             label2.Name = "label2";
+            label2.Size = new Size(141, 13);
+            label2.TabIndex = 10;
             label2.Text = "Vous avez déjà un compte ?";
 
-            // 
-            // linkLabel2
-            // 
-            resources.ApplyResources(linkLabel2, "linkLabel2");
+            
+
+            linkLabel2.AutoSize = true;
             linkLabel2.BackColor = Color.Transparent;
+            linkLabel2.Font = new Font("Segoe UI", 7.8F, FontStyle.Italic, GraphicsUnit.Point, 0);
             linkLabel2.LinkColor = Color.FromArgb(128, 128, 255);
+            linkLabel2.Location = new Point(372, 345);
             linkLabel2.Name = "linkLabel2";
+            linkLabel2.Size = new Size(68, 13);
+            linkLabel2.TabIndex = 11;
             linkLabel2.TabStop = true;
             linkLabel2.Text = "Se connecter";
             linkLabel2.LinkClicked += linkLabel2_LinkClicked;
 
-            // 
-            // Inscription
-            // 
-            resources.ApplyResources(this, "$this");
-            AutoScaleMode = AutoScaleMode.Font;
+            
 
-            // ✅ Même ordre que l'original pour garder l'affichage
-            Controls.Add(label2);
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(624, 441);
+
+            // Ajouter les contrôles dans l'ordre de tabulation
             Controls.Add(linkLabel2);
+            Controls.Add(label2);
             Controls.Add(btnLogin);
-            Controls.Add(txtConfirmation);      // textBox7
-            Controls.Add(txtMotDePasse);        // textBox6
-            Controls.Add(txtAdresse);           // textBox5
-            Controls.Add(txtTelephone);         // textBox1
-            Controls.Add(txtEmail);             // textBox4
-            Controls.Add(txtPrenom);            // textBox3
-            Controls.Add(txtNom);               // textBox2
-            Controls.Add(txtNomUtilisateur);    // nom
+            Controls.Add(txtConfirmation);
+            Controls.Add(txtMotDePasse);
+            Controls.Add(txtNomUtilisateur);
+            Controls.Add(txtAdresse);
+            Controls.Add(txtTelephone);
+            Controls.Add(txtEmail);
+            Controls.Add(txtPrenom);
+            Controls.Add(txtNom);
             Controls.Add(label1);
 
             Name = "Inscription";
+            Text = "VisionFlix - Inscription";
             ResumeLayout(false);
             PerformLayout();
         }
@@ -179,17 +205,14 @@
         #endregion
 
         private Label label1;
-
-        // ✅ NOUVEAUX NOMS LOGIQUES (mais même affichage)
-        private TextBox txtNomUtilisateur;    // Ancien: nom
-        private TextBox txtNom;               // Ancien: textBox2
-        private TextBox txtPrenom;            // Ancien: textBox3
-        private TextBox txtEmail;             // Ancien: textBox4
-        private TextBox txtTelephone;         // Ancien: textBox1
-        private TextBox txtAdresse;           // Ancien: textBox5
-        private TextBox txtMotDePasse;        // Ancien: textBox6
-        private TextBox txtConfirmation;      // Ancien: textBox7
-
+        private TextBox txtNom;              
+        private TextBox txtPrenom;           
+        private TextBox txtEmail;            
+        private TextBox txtTelephone;       
+        private TextBox txtAdresse;          
+        private TextBox txtNomUtilisateur;
+        private TextBox txtMotDePasse;       
+        private TextBox txtConfirmation;    
         private Button btnLogin;
         private Label label2;
         private LinkLabel linkLabel2;
