@@ -49,14 +49,13 @@ namespace VisionFlix.Presentation.Forms
 
             try
             {
-                // Construire le chemin vers le dossier Images
-                // Les images sont dans: bin\Debug\net8.0-windows\Images\
-                string imagePath = Path.Combine(
-                    AppDomain.CurrentDomain.BaseDirectory,
+                
+                string imagePath = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName,
                     "Images",
                     _film.ImageUrl
-                );
+            );
 
+                
                 if (File.Exists(imagePath))
                 {
                     // ✅ Utiliser FileStream pour éviter le verrouillage du fichier

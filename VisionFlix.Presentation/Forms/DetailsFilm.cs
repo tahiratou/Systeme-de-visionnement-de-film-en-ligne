@@ -52,7 +52,8 @@ namespace VisionFlix.Presentation.Forms
             try
             {
                 // Construire le chemin vers le dossier Images
-                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", _film.ImageUrl);
+                string imagePath = Path.Combine(Directory.GetParent(AppDomain.CurrentDomain.BaseDirectory).Parent.Parent.Parent.FullName,
+                    "Images", _film.ImageUrl);
 
                 if (File.Exists(imagePath))
                 {
