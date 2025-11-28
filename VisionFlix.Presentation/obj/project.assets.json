@@ -4337,23 +4337,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\tidia\\.nuget\\packages\\": {},
+    "C:\\Users\\tahir\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\tidia\\Desktop\\Genie Logiciel II\\Travail2Session\\VisionFlix.Presentation\\VisionFlix.Presentation.csproj",
+      "projectUniqueName": "C:\\Users\\tahir\\OneDrive\\Documents\\UQAR\\Automne 2025\\Génie logiciel II - INF23207\\TP3\\VisionFlix\\VisionFlix.Presentation\\VisionFlix.Presentation.csproj",
       "projectName": "VisionFlix.Presentation",
-      "projectPath": "C:\\Users\\tidia\\Desktop\\Genie Logiciel II\\Travail2Session\\VisionFlix.Presentation\\VisionFlix.Presentation.csproj",
-      "packagesPath": "C:\\Users\\tidia\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\tidia\\Desktop\\Genie Logiciel II\\Travail2Session\\VisionFlix.Presentation\\obj\\",
+      "projectPath": "C:\\Users\\tahir\\OneDrive\\Documents\\UQAR\\Automne 2025\\Génie logiciel II - INF23207\\TP3\\VisionFlix\\VisionFlix.Presentation\\VisionFlix.Presentation.csproj",
+      "packagesPath": "C:\\Users\\tahir\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\tahir\\OneDrive\\Documents\\UQAR\\Automne 2025\\Génie logiciel II - INF23207\\TP3\\VisionFlix\\VisionFlix.Presentation\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\tidia\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\tahir\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
@@ -4369,11 +4369,11 @@
         "net8.0-windows7.0": {
           "targetAlias": "net8.0-windows",
           "projectReferences": {
-            "C:\\Users\\tidia\\Desktop\\Genie Logiciel II\\Travail2Session\\VisionFlix.Application\\VisionFlix.Application.csproj": {
-              "projectPath": "C:\\Users\\tidia\\Desktop\\Genie Logiciel II\\Travail2Session\\VisionFlix.Application\\VisionFlix.Application.csproj"
+            "C:\\Users\\tahir\\OneDrive\\Documents\\UQAR\\Automne 2025\\Génie logiciel II - INF23207\\TP3\\VisionFlix\\VisionFlix.Application\\VisionFlix.Application.csproj": {
+              "projectPath": "C:\\Users\\tahir\\OneDrive\\Documents\\UQAR\\Automne 2025\\Génie logiciel II - INF23207\\TP3\\VisionFlix\\VisionFlix.Application\\VisionFlix.Application.csproj"
             },
-            "C:\\Users\\tidia\\Desktop\\Genie Logiciel II\\Travail2Session\\VisionFlix.Infrastructure\\VisionFlix.Infrastructure.csproj": {
-              "projectPath": "C:\\Users\\tidia\\Desktop\\Genie Logiciel II\\Travail2Session\\VisionFlix.Infrastructure\\VisionFlix.Infrastructure.csproj"
+            "C:\\Users\\tahir\\OneDrive\\Documents\\UQAR\\Automne 2025\\Génie logiciel II - INF23207\\TP3\\VisionFlix\\VisionFlix.Infrastructure\\VisionFlix.Infrastructure.csproj": {
+              "projectPath": "C:\\Users\\tahir\\OneDrive\\Documents\\UQAR\\Automne 2025\\Génie logiciel II - INF23207\\TP3\\VisionFlix\\VisionFlix.Infrastructure\\VisionFlix.Infrastructure.csproj"
             }
           }
         }

@@ -28,7 +28,7 @@ namespace VisionFlix.Presentation.Forms
             numRating.Value = (decimal)film.Note;
             numDuration.Value = film.Duree;
             cmbGenre.Text = film.Genre;
-            txtThumbnail.Text = film.Vignette;
+            txtThumbnail.Text = film.ImageUrl;
             txtSynopsis.Text = film.Synopsis;
             numPrice.Value = film.Prix;
         }
@@ -45,7 +45,7 @@ namespace VisionFlix.Presentation.Forms
                 Note = (double)numRating.Value,
                 Duree = (int)numDuration.Value,
                 Genre = cmbGenre.Text,
-                Vignette = txtThumbnail.Text.Trim(),
+                ImageUrl = txtThumbnail.Text.Trim(),
                 Synopsis = txtSynopsis.Text.Trim(),
                 Prix = numPrice.Value,
                 EstDisponible = true,

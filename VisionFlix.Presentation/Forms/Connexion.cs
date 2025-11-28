@@ -13,30 +13,46 @@ namespace VisionFlix.Presentation.Forms
         {
             InitializeComponent();
             this.Text = "VisionFlix - Connexion";
-
             _authService = authService;
             _serviceProvider = serviceProvider;
         }
 
-        // GARDEZ VOTRE CODE DESIGNER.CS TEL QUEL
-        // Modifiez uniquement la logique du bouton Login:
-
+        // Bouton de connexion
         private async void btnLogin_Click(object? sender, EventArgs e)
         {
-            string email = textBox1.Text.Trim();
-            string motDePasse = textBox2.Text;
+            // ✅ AVANT: string email = textBox1.Text.Trim();
+            // ✅ APRÈS: string nomUtilisateur = txtNomUtilisateur.Text.Trim();
+            string nomUtilisateur = txtIdentifiant.Text.Trim();
 
-            if (string.IsNullOrWhiteSpace(email) || string.IsNullOrWhiteSpace(motDePasse))
+            // ✅ AVANT: string motDePasse = textBox2.Text;
+            // ✅ APRÈS: string motDePasse = txtMotDePasse.Text;
+            string motDePasse = txtMotDePasse.Text;
+
+            // Validation des champs
+            if (string.IsNullOrWhiteSpace(nomUtilisateur))
             {
-                MessageBox.Show("Veuillez remplir tous les champs.", "Erreur",
+                MessageBox.Show("Veuillez entrer votre nom d'utilisateur.", "Erreur",
                     MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtIdentifiant.Focus();
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(motDePasse))
+            {
+                MessageBox.Show("Veuillez entrer votre mot de passe.", "Erreur",
+                    MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtMotDePasse.Focus();
+                return;
+            }
+
+            // Désactiver le bouton pendant le traitement
+            btnLogin.Enabled = false;
+            btnLogin.Text = "Connexion en cours...";
+
             try
             {
-                // Utiliser le service d'authentification
-                var utilisateur = await _authService.ConnecterAsync(email, motDePasse);
+                // Utiliser le service d'authentification avec le nom d'utilisateur
+                var utilisateur = await _authService.ConnecterAsync(nomUtilisateur, motDePasse);
 
                 if (utilisateur != null)
                 {
@@ -51,8 +67,12 @@ namespace VisionFlix.Presentation.Forms
                 }
                 else
                 {
-                    MessageBox.Show("Email ou mot de passe incorrect.", "Erreur de connexion",
+                    MessageBox.Show("Nom d'utilisateur ou mot de passe incorrect.", "Erreur de connexion",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    // Mettre le focus sur le nom d'utilisateur pour permettre une nouvelle tentative
+                    txtIdentifiant.Focus();
+                    txtIdentifiant.SelectAll();
                 }
             }
             catch (Exception ex)
@@ -60,39 +80,31 @@ namespace VisionFlix.Presentation.Forms
                 MessageBox.Show($"Erreur lors de la connexion : {ex.Message}", "Erreur",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                // Réactiver le bouton
+                btnLogin.Enabled = true;
+                btnLogin.Text = "Connexion";
+            }
         }
 
-        // Si vous avez un lien "S'inscrire"
-        private void linkLabel2_Click(object? sender, EventArgs e)
+        // Lien "S'inscrire"
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             var inscriptionForm = _serviceProvider.GetRequiredService<Inscription>();
-            inscriptionForm.ShowDialog();
+            this.Hide();  // Cache la connexion
+            var result = inscriptionForm.ShowDialog();
+
+            if (result == DialogResult.OK)
+            {
+                // L'inscription a réussi, on peut fermer la connexion
+                this.Close();
+            }
+            else
+            {
+                // L'utilisateur a annulé, on réaffiche la connexion
+                this.Show();
+            }
         }
-
-        private void btnLogin_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-		private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-		{
-			var inscriptionForm = _serviceProvider.GetRequiredService<Inscription>();
-
-			this.Hide();  // Cache la connexion
-
-			var result = inscriptionForm.ShowDialog();
-
-			if (result == DialogResult.OK)
-			{
-				// L'inscription a réussi, on peut fermer la connexion
-				this.Close();
-			}
-			else
-			{
-				// L'utilisateur a annulé, on réaffiche la connexion
-				this.Show();
-			}
-		}
-	}
+    }
 }
-

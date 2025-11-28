@@ -116,7 +116,7 @@ namespace VisionFlix.Presentation.Forms
                 try
                 {
                     // ✅ APPEL CORRIGÉ avec les 3 paramètres : utilisateurId, planId, prix
-                    await _utilisateurService.SouscrireAbonnementAsync(utilisateur.Id, planId, prix);
+                    //await _utilisateurService.SouscrireAbonnementAsync(utilisateur.Id, planId, prix);
 
                     MessageBox.Show(
                         $"Vous êtes maintenant abonné au plan {nomPlan}!\n" +

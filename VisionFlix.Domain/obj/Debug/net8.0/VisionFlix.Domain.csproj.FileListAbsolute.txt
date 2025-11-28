@@ -21,3 +21,4 @@ C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\obj\D
 C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\obj\Debug\net8.0\refint\VisionFlix.Domain.dll
 C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.pdb
 C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Domain\obj\Debug\net8.0\ref\VisionFlix.Domain.dll
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Domain\obj\Debug\net8.0\VisionFlix.Domain.sourcelink.json

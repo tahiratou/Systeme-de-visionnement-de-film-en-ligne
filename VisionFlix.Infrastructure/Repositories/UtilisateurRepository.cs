@@ -14,40 +14,26 @@ namespace VisionFlix.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task<Utilisateur?> GetByEmailAsync(string email)
-        {
-            return await _context.Utilisateurs
-                .Include(u => u.PlanAbonnement)
-                .Include(u => u.Achats)
-                .Include(u => u.Visionnements)
-                .Include(u => u.Notations)
-                .FirstOrDefaultAsync(u => u.Email == email);
-        }
-
-        public async Task<Utilisateur?> AuthenticateAsync(string email, string password)
-        {
-            var utilisateur = await _context.Utilisateurs
-                .Include(u => u.PlanAbonnement)
-                .FirstOrDefaultAsync(u => u.Email == email && u.MotDePasse == password);
-
-            if (utilisateur != null)
-            {
-                utilisateur.DerniereConnexion = DateTime.Now;
-                await _context.SaveChangesAsync();
-            }
-
-            return utilisateur;
-        }
-
         public async Task<Utilisateur?> GetByIdAsync(int id)
         {
             return await _context.Utilisateurs
                 .Include(u => u.PlanAbonnement)
-                .Include(u => u.Achats)
-                .Include(u => u.Visionnements)
-                .Include(u => u.Notations)
-                .Include(u => u.Transactions)
                 .FirstOrDefaultAsync(u => u.Id == id);
+        }
+
+        public async Task<Utilisateur?> GetByEmailAsync(string email)
+        {
+            return await _context.Utilisateurs
+                .Include(u => u.PlanAbonnement)
+                .FirstOrDefaultAsync(u => u.Email == email);
+        }
+
+        // ✅✅✅ MÉTHODE AJOUTÉE
+        public async Task<Utilisateur?> GetByNomUtilisateurAsync(string nomUtilisateur)
+        {
+            return await _context.Utilisateurs
+                .Include(u => u.PlanAbonnement)
+                .FirstOrDefaultAsync(u => u.NomUtilisateur == nomUtilisateur);
         }
 
         public async Task<IEnumerable<Utilisateur>> GetAllAsync()
@@ -57,7 +43,7 @@ namespace VisionFlix.Infrastructure.Repositories
                 .ToListAsync();
         }
 
-        public async Task<Utilisateur> AddAsync(Utilisateur utilisateur)
+        public async Task<Utilisateur> CreateAsync(Utilisateur utilisateur)
         {
             _context.Utilisateurs.Add(utilisateur);
             await _context.SaveChangesAsync();
@@ -72,7 +58,7 @@ namespace VisionFlix.Infrastructure.Repositories
 
         public async Task DeleteAsync(int id)
         {
-            var utilisateur = await _context.Utilisateurs.FindAsync(id);
+            var utilisateur = await GetByIdAsync(id);
             if (utilisateur != null)
             {
                 _context.Utilisateurs.Remove(utilisateur);
@@ -85,9 +71,9 @@ namespace VisionFlix.Infrastructure.Repositories
             return await _context.Utilisateurs.AnyAsync(u => u.Email == email);
         }
 
-        public async Task<bool> ExistsAsync(int id)
+        public async Task<bool> NomUtilisateurExistsAsync(string nomUtilisateur)
         {
-            return await _context.Utilisateurs.AnyAsync(u => u.Id == id);
+            return await _context.Utilisateurs.AnyAsync(u => u.NomUtilisateur == nomUtilisateur);
         }
     }
 }

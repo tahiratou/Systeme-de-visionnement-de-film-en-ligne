@@ -18,6 +18,9 @@ namespace VisionFlix.Domain.Entities
 
         [Required]
         [MaxLength(100)]
+        public string NomUtilisateur { get; set; } = string.Empty; 
+        [Required]
+        [MaxLength(100)]
         public string Prenom { get; set; } = string.Empty;
 
         [Required]
@@ -27,7 +30,7 @@ namespace VisionFlix.Domain.Entities
 
         [Required]
         [MaxLength(500)]
-        public string MotDePasse { get; set; } = string.Empty; // Hash du mot de passe
+        public string MotDePasse { get; set; } = string.Empty; 
 
         [MaxLength(20)]
         public string? Telephone { get; set; }

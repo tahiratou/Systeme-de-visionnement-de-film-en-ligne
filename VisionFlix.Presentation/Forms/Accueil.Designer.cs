@@ -51,8 +51,9 @@
             panelTop.Controls.Add(btnSearch);
             panelTop.Dock = DockStyle.Top;
             panelTop.Location = new Point(0, 0);
+            panelTop.Margin = new Padding(4, 5, 4, 5);
             panelTop.Name = "panelTop";
-            panelTop.Size = new Size(1200, 80);
+            panelTop.Size = new Size(1714, 133);
             panelTop.TabIndex = 0;
             // 
             // btnProfil
@@ -62,9 +63,10 @@
             btnProfil.FlatStyle = FlatStyle.Flat;
             btnProfil.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnProfil.ForeColor = Color.White;
-            btnProfil.Location = new Point(1145, 25);
+            btnProfil.Location = new Point(1636, 42);
+            btnProfil.Margin = new Padding(4, 5, 4, 5);
             btnProfil.Name = "btnProfil";
-            btnProfil.Size = new Size(35, 29);
+            btnProfil.Size = new Size(50, 48);
             btnProfil.TabIndex = 3;
             btnProfil.Text = "👤";
             btnProfil.UseVisualStyleBackColor = false;
@@ -76,9 +78,10 @@
             lblTitle.BackColor = Color.Transparent;
             lblTitle.Font = new Font("Segoe UI", 24F, FontStyle.Bold);
             lblTitle.ForeColor = Color.White;
-            lblTitle.Location = new Point(20, 20);
+            lblTitle.Location = new Point(29, 33);
+            lblTitle.Margin = new Padding(4, 0, 4, 0);
             lblTitle.Name = "lblTitle";
-            lblTitle.Size = new Size(165, 45);
+            lblTitle.Size = new Size(247, 65);
             lblTitle.TabIndex = 0;
             lblTitle.Text = "VisionFlix";
             // 
@@ -86,10 +89,11 @@
             // 
             txtSearch.Anchor = AnchorStyles.Top | AnchorStyles.Right;
             txtSearch.Font = new Font("Segoe UI", 12F);
-            txtSearch.Location = new Point(820, 25);
+            txtSearch.Location = new Point(1171, 42);
+            txtSearch.Margin = new Padding(4, 5, 4, 5);
             txtSearch.Name = "txtSearch";
             txtSearch.PlaceholderText = "Rechercher un film...";
-            txtSearch.Size = new Size(250, 29);
+            txtSearch.Size = new Size(355, 39);
             txtSearch.TabIndex = 1;
             // 
             // btnSearch
@@ -99,9 +103,10 @@
             btnSearch.FlatStyle = FlatStyle.Flat;
             btnSearch.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnSearch.ForeColor = Color.White;
-            btnSearch.Location = new Point(1080, 25);
+            btnSearch.Location = new Point(1543, 42);
+            btnSearch.Margin = new Padding(4, 5, 4, 5);
             btnSearch.Name = "btnSearch";
-            btnSearch.Size = new Size(35, 29);
+            btnSearch.Size = new Size(50, 48);
             btnSearch.TabIndex = 2;
             btnSearch.Text = "🔍︎";
             btnSearch.UseVisualStyleBackColor = false;
@@ -120,9 +125,10 @@
             panelSidebar.Controls.Add(btnApplyFilters);
             panelSidebar.Controls.Add(btnResetFilters);
             panelSidebar.Dock = DockStyle.Left;
-            panelSidebar.Location = new Point(0, 80);
+            panelSidebar.Location = new Point(0, 133);
+            panelSidebar.Margin = new Padding(4, 5, 4, 5);
             panelSidebar.Name = "panelSidebar";
-            panelSidebar.Size = new Size(250, 570);
+            panelSidebar.Size = new Size(357, 917);
             panelSidebar.TabIndex = 1;
             // 
             // lblFilters
@@ -130,9 +136,10 @@
             lblFilters.AutoSize = true;
             lblFilters.Font = new Font("Segoe UI", 14F, FontStyle.Bold);
             lblFilters.ForeColor = Color.White;
-            lblFilters.Location = new Point(20, 20);
+            lblFilters.Location = new Point(29, 33);
+            lblFilters.Margin = new Padding(4, 0, 4, 0);
             lblFilters.Name = "lblFilters";
-            lblFilters.Size = new Size(65, 25);
+            lblFilters.Size = new Size(97, 38);
             lblFilters.TabIndex = 0;
             lblFilters.Text = "Filtres";
             // 
@@ -142,9 +149,10 @@
             cmbGenre.Font = new Font("Segoe UI", 10F);
             cmbGenre.FormattingEnabled = true;
             cmbGenre.Items.AddRange(new object[] { "Tous", "Action", "Comédie", "Drame", "Science-Fiction", "Thriller", "Horreur", "Romance", "Documentaire" });
-            cmbGenre.Location = new Point(20, 90);
+            cmbGenre.Location = new Point(29, 150);
+            cmbGenre.Margin = new Padding(4, 5, 4, 5);
             cmbGenre.Name = "cmbGenre";
-            cmbGenre.Size = new Size(210, 25);
+            cmbGenre.Size = new Size(298, 36);
             cmbGenre.TabIndex = 2;
             // 
             // lblGenre
@@ -153,9 +161,10 @@
             lblGenre.BackColor = Color.Transparent;
             lblGenre.Font = new Font("Segoe UI", 10F);
             lblGenre.ForeColor = Color.LightGray;
-            lblGenre.Location = new Point(20, 65);
+            lblGenre.Location = new Point(29, 108);
+            lblGenre.Margin = new Padding(4, 0, 4, 0);
             lblGenre.Name = "lblGenre";
-            lblGenre.Size = new Size(46, 19);
+            lblGenre.Size = new Size(64, 28);
             lblGenre.TabIndex = 1;
             lblGenre.Text = "Genre";
             // 
@@ -165,9 +174,10 @@
             cmbYear.Font = new Font("Segoe UI", 10F);
             cmbYear.FormattingEnabled = true;
             cmbYear.Items.AddRange(new object[] { "Toutes", "2024", "2023", "2022", "2021", "2020", "2010-2019", "2000-2009", "1990-1999", "Classiques" });
-            cmbYear.Location = new Point(20, 160);
+            cmbYear.Location = new Point(29, 267);
+            cmbYear.Margin = new Padding(4, 5, 4, 5);
             cmbYear.Name = "cmbYear";
-            cmbYear.Size = new Size(210, 25);
+            cmbYear.Size = new Size(298, 36);
             cmbYear.TabIndex = 4;
             // 
             // lblYear
@@ -176,9 +186,10 @@
             lblYear.BackColor = Color.Transparent;
             lblYear.Font = new Font("Segoe UI", 10F);
             lblYear.ForeColor = Color.LightGray;
-            lblYear.Location = new Point(20, 135);
+            lblYear.Location = new Point(29, 225);
+            lblYear.Margin = new Padding(4, 0, 4, 0);
             lblYear.Name = "lblYear";
-            lblYear.Size = new Size(48, 19);
+            lblYear.Size = new Size(67, 28);
             lblYear.TabIndex = 3;
             lblYear.Text = "Année";
             // 
@@ -188,9 +199,10 @@
             cmbRating.Font = new Font("Segoe UI", 10F);
             cmbRating.FormattingEnabled = true;
             cmbRating.Items.AddRange(new object[] { "Toutes", "★★★★★ (5.0)", "★★★★☆ (4.0+)", "★★★☆☆ (3.0+)", "★★☆☆☆ (2.0+)" });
-            cmbRating.Location = new Point(20, 230);
+            cmbRating.Location = new Point(29, 383);
+            cmbRating.Margin = new Padding(4, 5, 4, 5);
             cmbRating.Name = "cmbRating";
-            cmbRating.Size = new Size(210, 25);
+            cmbRating.Size = new Size(298, 36);
             cmbRating.TabIndex = 6;
             // 
             // lblRating
@@ -199,9 +211,10 @@
             lblRating.BackColor = Color.Transparent;
             lblRating.Font = new Font("Segoe UI", 10F);
             lblRating.ForeColor = Color.LightGray;
-            lblRating.Location = new Point(20, 205);
+            lblRating.Location = new Point(29, 342);
+            lblRating.Margin = new Padding(4, 0, 4, 0);
             lblRating.Name = "lblRating";
-            lblRating.Size = new Size(88, 19);
+            lblRating.Size = new Size(127, 28);
             lblRating.TabIndex = 5;
             lblRating.Text = "Note critique";
             // 
@@ -211,9 +224,10 @@
             btnApplyFilters.FlatStyle = FlatStyle.Flat;
             btnApplyFilters.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnApplyFilters.ForeColor = Color.White;
-            btnApplyFilters.Location = new Point(20, 290);
+            btnApplyFilters.Location = new Point(29, 483);
+            btnApplyFilters.Margin = new Padding(4, 5, 4, 5);
             btnApplyFilters.Name = "btnApplyFilters";
-            btnApplyFilters.Size = new Size(210, 35);
+            btnApplyFilters.Size = new Size(300, 58);
             btnApplyFilters.TabIndex = 7;
             btnApplyFilters.Text = "Appliquer";
             btnApplyFilters.UseVisualStyleBackColor = false;
@@ -224,9 +238,10 @@
             btnResetFilters.FlatStyle = FlatStyle.Flat;
             btnResetFilters.Font = new Font("Segoe UI", 9F);
             btnResetFilters.ForeColor = Color.White;
-            btnResetFilters.Location = new Point(20, 335);
+            btnResetFilters.Location = new Point(29, 558);
+            btnResetFilters.Margin = new Padding(4, 5, 4, 5);
             btnResetFilters.Name = "btnResetFilters";
-            btnResetFilters.Size = new Size(210, 30);
+            btnResetFilters.Size = new Size(300, 50);
             btnResetFilters.TabIndex = 8;
             btnResetFilters.Text = "Réinitialiser";
             btnResetFilters.UseVisualStyleBackColor = false;
@@ -238,10 +253,11 @@
             flowLayoutPanelMovies.BackgroundImage = (Image)resources.GetObject("flowLayoutPanelMovies.BackgroundImage");
             flowLayoutPanelMovies.BackgroundImageLayout = ImageLayout.Stretch;
             flowLayoutPanelMovies.Dock = DockStyle.Fill;
-            flowLayoutPanelMovies.Location = new Point(250, 80);
+            flowLayoutPanelMovies.Location = new Point(357, 133);
+            flowLayoutPanelMovies.Margin = new Padding(4, 5, 4, 5);
             flowLayoutPanelMovies.Name = "flowLayoutPanelMovies";
-            flowLayoutPanelMovies.Padding = new Padding(20);
-            flowLayoutPanelMovies.Size = new Size(950, 540);
+            flowLayoutPanelMovies.Padding = new Padding(29, 33, 29, 33);
+            flowLayoutPanelMovies.Size = new Size(1357, 867);
             flowLayoutPanelMovies.TabIndex = 2;
             // 
             // panelBottom
@@ -249,9 +265,10 @@
             panelBottom.BackColor = Color.FromArgb(20, 20, 20);
             panelBottom.Controls.Add(lblStatus);
             panelBottom.Dock = DockStyle.Bottom;
-            panelBottom.Location = new Point(250, 620);
+            panelBottom.Location = new Point(357, 1000);
+            panelBottom.Margin = new Padding(4, 5, 4, 5);
             panelBottom.Name = "panelBottom";
-            panelBottom.Size = new Size(950, 30);
+            panelBottom.Size = new Size(1357, 50);
             panelBottom.TabIndex = 3;
             // 
             // lblStatus
@@ -259,23 +276,25 @@
             lblStatus.AutoSize = true;
             lblStatus.Font = new Font("Segoe UI", 9F);
             lblStatus.ForeColor = Color.LightGray;
-            lblStatus.Location = new Point(20, 8);
+            lblStatus.Location = new Point(29, 13);
+            lblStatus.Margin = new Padding(4, 0, 4, 0);
             lblStatus.Name = "lblStatus";
-            lblStatus.Size = new Size(137, 15);
+            lblStatus.Size = new Size(206, 25);
             lblStatus.TabIndex = 0;
             lblStatus.Text = "0 films dans la collection";
             // 
             // Accueil
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(15, 15, 15);
-            ClientSize = new Size(1200, 650);
+            ClientSize = new Size(1714, 1050);
             Controls.Add(flowLayoutPanelMovies);
             Controls.Add(panelBottom);
             Controls.Add(panelSidebar);
             Controls.Add(panelTop);
-            MinimumSize = new Size(1000, 598);
+            Margin = new Padding(4, 5, 4, 5);
+            MinimumSize = new Size(1419, 959);
             Name = "Accueil";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "VisionFlix - Accueil";

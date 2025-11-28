@@ -33,12 +33,14 @@ namespace VisionFlix.Presentation.Forms
             lblRating.Text = GetStarRating(film.Note);
             lblDuration.Text = $"{film.Duree} min";
 
+            // ✅ Charger l'image du film
             ChargerImageFilm();
         }
 
         private void ChargerImageFilm()
         {
-            if (string.IsNullOrEmpty(_film.Vignette))
+            // ✅ CORRECTION: Utiliser ImageUrl au lieu de Vignette
+            if (string.IsNullOrEmpty(_film.ImageUrl))
             {
                 picThumbnail.Image = null;
                 picThumbnail.BackColor = Color.FromArgb(60, 60, 60);
@@ -48,28 +50,44 @@ namespace VisionFlix.Presentation.Forms
             try
             {
                 // Construire le chemin vers le dossier Images
-                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", _film.Vignette);
+                // Les images sont dans: bin\Debug\net8.0-windows\Images\
+                string imagePath = Path.Combine(
+                    AppDomain.CurrentDomain.BaseDirectory,
+                    "Images",
+                    _film.ImageUrl
+                );
 
                 if (File.Exists(imagePath))
                 {
+                    // ✅ Utiliser FileStream pour éviter le verrouillage du fichier
                     using var stream = new FileStream(imagePath, FileMode.Open, FileAccess.Read);
                     picThumbnail.Image = Image.FromStream(stream);
+                    picThumbnail.SizeMode = PictureBoxSizeMode.Zoom; // ✅ Ajout pour meilleur affichage
                 }
                 else
                 {
+                    // Image introuvable
                     picThumbnail.Image = null;
                     picThumbnail.BackColor = Color.FromArgb(60, 60, 60);
+
+                    // Debug: afficher le chemin dans la console
+                    System.Diagnostics.Debug.WriteLine($"⚠️ Image introuvable: {imagePath}");
                 }
             }
-            catch
+            catch (Exception ex)
             {
+                // Erreur lors du chargement
                 picThumbnail.Image = null;
                 picThumbnail.BackColor = Color.FromArgb(60, 60, 60);
+
+                // Debug: afficher l'erreur dans la console
+                System.Diagnostics.Debug.WriteLine($"❌ Erreur chargement image: {ex.Message}");
             }
         }
 
         private void OnCardClick(object? sender, EventArgs e)
         {
+            // Déclencher l'événement avec les données du film
             FilmClicked?.Invoke(this, _film);
         }
 
@@ -86,7 +104,7 @@ namespace VisionFlix.Presentation.Forms
         private string GetStarRating(double rating)
         {
             int fullStars = (int)rating;
-            bool halfStar = (int)(rating % 1) >= 0.5m;
+            bool halfStar = (rating % 1) >= 0.5; 
             int emptyStars = 5 - fullStars - (halfStar ? 1 : 0);
 
             return new string('★', fullStars) +

@@ -303,3 +303,8 @@ C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Presentation
 C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Presentation\obj\Debug\net8.0-windows\ref\VisionFlix.Presentation.dll
 C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Presentation\bin\Debug\net8.0-windows\appsettings.json
 C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix.Presentation\obj\Debug\net8.0-windows\VisionFlix.Presentation.Forms.DetailsFilm.resources
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Presentation\bin\Debug\net8.0-windows\appsettings.json
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Presentation\obj\Debug\net8.0-windows\VisionFlix.Presentation.Forms.DetailsFilm.resources
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Presentation\obj\Debug\net8.0-windows\VisionFlix.Presentation.sourcelink.json
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Presentation\obj\Debug\net8.0-windows\VisionFlix.Presentation.Properties.Resources.resources
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix.Presentation\bin\Debug\net8.0-windows\Forms\FicheFilm.cs

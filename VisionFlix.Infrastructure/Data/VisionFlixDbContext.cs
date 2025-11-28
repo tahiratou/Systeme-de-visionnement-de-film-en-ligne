@@ -33,20 +33,41 @@ namespace VisionFlix.Infrastructure.Data
                 entity.Property(e => e.Realisateur).IsRequired().HasMaxLength(150);
                 entity.Property(e => e.Prix).HasColumnType("decimal(10,2)");
                 entity.Property(e => e.Note).HasColumnType("decimal(3,1)");
+                entity.Property(e => e.EstDisponible)
+                    .IsRequired()
+                    .HasDefaultValue(true);
 
                 entity.HasIndex(e => e.Titre);
                 entity.HasIndex(e => e.Genre);
                 entity.HasIndex(e => e.Annee);
             });
 
-            // ===== CONFIGURATION UTILISATEUR =====
             modelBuilder.Entity<Utilisateur>(entity =>
             {
                 entity.HasKey(e => e.Id);
-                entity.Property(e => e.Email).IsRequired().HasMaxLength(150);
-                entity.Property(e => e.Solde).HasColumnType("decimal(10,2)");
 
+                entity.Property(e => e.NomUtilisateur)
+                    .IsRequired()
+                    .HasMaxLength(50);
+                entity.HasIndex(e => e.NomUtilisateur).IsUnique();
+
+                entity.Property(e => e.Email)
+                    .IsRequired()
+                    .HasMaxLength(150);
                 entity.HasIndex(e => e.Email).IsUnique();
+
+                entity.Property(e => e.Nom).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.Prenom).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.MotDePasse).IsRequired().HasMaxLength(255);
+                entity.Property(e => e.Telephone).HasMaxLength(20);
+                entity.Property(e => e.Adresse).HasMaxLength(200);
+                entity.Property(e => e.Solde).HasColumnType("decimal(10,2)").HasDefaultValue(0);
+                entity.Property(e => e.EstAdministrateur).HasDefaultValue(false);
+                entity.Property(e => e.EstAbonne).HasDefaultValue(false);
+                entity.Property(e => e.DateInscription).HasDefaultValueSql("GETDATE()");
+
+
+                entity.Property(e => e.DerniereConnexion).IsRequired(false);
 
                 // Relation avec PlanAbonnement
                 entity.HasOne(e => e.PlanAbonnement)
@@ -56,14 +77,13 @@ namespace VisionFlix.Infrastructure.Data
             });
 
             // ===== CONFIGURATION PLANABONNEMENT =====
-            // ✅ UNIQUEMENT les propriétés qui existent dans ta classe
             modelBuilder.Entity<PlanAbonnement>(entity =>
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Nom).IsRequired().HasMaxLength(100);
                 entity.Property(e => e.Prix).HasColumnType("decimal(10,2)").IsRequired();
                 entity.Property(e => e.Description).HasMaxLength(500);
-                entity.Property(e => e.EstActif).IsRequired();
+                entity.Property(e => e.EstActif).IsRequired().HasDefaultValue(true);
             });
 
             // ===== CONFIGURATION CATEGORIE =====
@@ -71,6 +91,8 @@ namespace VisionFlix.Infrastructure.Data
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Nom).IsRequired().HasMaxLength(100);
+                entity.Property(e => e.Description).HasMaxLength(500);
+                entity.Property(e => e.EstActive).HasDefaultValue(true);
                 entity.HasIndex(e => e.Nom).IsUnique();
             });
 
@@ -80,6 +102,7 @@ namespace VisionFlix.Infrastructure.Data
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Nom).IsRequired().HasMaxLength(100);
                 entity.Property(e => e.Code).IsRequired().HasMaxLength(10);
+                entity.Property(e => e.EstActive).HasDefaultValue(true);
                 entity.HasIndex(e => e.Code).IsUnique();
             });
 
@@ -88,6 +111,7 @@ namespace VisionFlix.Infrastructure.Data
             {
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.PrixAchat).HasColumnType("decimal(10,2)");
+                entity.Property(e => e.DateAchat).HasDefaultValueSql("GETDATE()");
 
                 entity.HasOne(e => e.Utilisateur)
                     .WithMany(u => u.Achats)
@@ -108,6 +132,7 @@ namespace VisionFlix.Infrastructure.Data
             modelBuilder.Entity<Visionnement>(entity =>
             {
                 entity.HasKey(e => e.Id);
+                entity.Property(e => e.DateVisionnement).HasDefaultValueSql("GETDATE()");
 
                 entity.HasOne(e => e.Utilisateur)
                     .WithMany(u => u.Visionnements)
@@ -127,6 +152,8 @@ namespace VisionFlix.Infrastructure.Data
             modelBuilder.Entity<Notation>(entity =>
             {
                 entity.HasKey(e => e.Id);
+                entity.Property(e => e.Note).IsRequired();
+                entity.Property(e => e.DateNotation).HasDefaultValueSql("GETDATE()");
 
                 entity.HasOne(e => e.Utilisateur)
                     .WithMany(u => u.Notations)
@@ -148,6 +175,8 @@ namespace VisionFlix.Infrastructure.Data
                 entity.HasKey(e => e.Id);
                 entity.Property(e => e.Montant).HasColumnType("decimal(10,2)");
                 entity.Property(e => e.Type).IsRequired().HasMaxLength(50);
+                entity.Property(e => e.Description).HasMaxLength(500);
+                entity.Property(e => e.DateTransaction).HasDefaultValueSql("GETDATE()");
 
                 entity.HasOne(e => e.Utilisateur)
                     .WithMany(u => u.Transactions)
@@ -157,52 +186,6 @@ namespace VisionFlix.Infrastructure.Data
                 entity.HasIndex(e => e.UtilisateurId);
                 entity.HasIndex(e => e.DateTransaction);
             });
-
-            // ===== DONNÉES INITIALES (SEED) =====
-
-            // Seed Plans Abonnement
-            modelBuilder.Entity<PlanAbonnement>().HasData(
-                new PlanAbonnement
-                {
-                    Id = 1,
-                    Nom = "Basique",
-                    Prix = 9.99m,
-                    Description = "Accès limité aux films",
-                    EstActif = true
-                },
-                new PlanAbonnement
-                {
-                    Id = 2,
-                    Nom = "Standard",
-                    Prix = 14.99m,
-                    Description = "Accès illimité aux films, 1 écran",
-                    EstActif = true
-                },
-                new PlanAbonnement
-                {
-                    Id = 3,
-                    Nom = "Premium",
-                    Prix = 19.99m,
-                    Description = "Accès illimité aux films, 4 écrans, HD",
-                    EstActif = true
-                }
-            );
-
-            // Seed Catégories
-            modelBuilder.Entity<Categorie>().HasData(
-                new Categorie { Id = 1, Nom = "Action", Description = "Films d'action", EstActive = true },
-                new Categorie { Id = 2, Nom = "Comédie", Description = "Films humoristiques", EstActive = true },
-                new Categorie { Id = 3, Nom = "Drame", Description = "Films dramatiques", EstActive = true },
-                new Categorie { Id = 4, Nom = "Science-Fiction", Description = "Films de science-fiction", EstActive = true },
-                new Categorie { Id = 5, Nom = "Thriller", Description = "Films à suspense", EstActive = true }
-            );
-
-            // Seed Langues
-            modelBuilder.Entity<Langue>().HasData(
-                new Langue { Id = 1, Nom = "Français", Code = "fr", EstActive = true },
-                new Langue { Id = 2, Nom = "Anglais", Code = "en", EstActive = true },
-                new Langue { Id = 3, Nom = "Espagnol", Code = "es", EstActive = true }
-            );
         }
     }
 }

@@ -34,8 +34,7 @@ namespace VisionFlix.Domain.Entities
         public string Genre { get; set; } = string.Empty;
 
         [MaxLength(500)]
-        public string? Vignette { get; set; }
-
+        public string? ImageUrl { get; set; }
         [MaxLength(2000)]
         public string? Synopsis { get; set; }
 

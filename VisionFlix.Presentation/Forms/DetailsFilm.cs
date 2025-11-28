@@ -42,7 +42,7 @@ namespace VisionFlix.Presentation.Forms
 
         private void ChargerImageFilm()
         {
-            if (_film == null || string.IsNullOrEmpty(_film.Vignette))
+            if (_film == null || string.IsNullOrEmpty(_film.ImageUrl))
             {
                 pictureBoxFilm.Image = null;
                 pictureBoxFilm.BackColor = Color.FromArgb(60, 60, 60);
@@ -52,7 +52,7 @@ namespace VisionFlix.Presentation.Forms
             try
             {
                 // Construire le chemin vers le dossier Images
-                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", _film.Vignette);
+                string imagePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Images", _film.ImageUrl);
 
                 if (File.Exists(imagePath))
                 {
