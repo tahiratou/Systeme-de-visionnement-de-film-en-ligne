@@ -53,5 +53,17 @@ namespace VisionFlix.Application.Services
         {
             return _currentUser?.EstAdministrateur ?? false;
         }
+
+        public async Task<bool> ValiderMotDePasseAsync(string email, string motDePasse)
+        {
+            var utilisateur = await _utilisateurRepository.GetByEmailAsync(email);
+
+            if (utilisateur == null)
+            {
+                return false;
+            }
+
+            return utilisateur.MotDePasse == motDePasse;
+        }
     }
 }

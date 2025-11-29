@@ -2,15 +2,8 @@ namespace VisionFlix.Presentation.Forms
 {
     partial class FormulaireUtilisateur
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -22,196 +15,282 @@ namespace VisionFlix.Presentation.Forms
 
         #region Windows Form Designer generated code
 
-        /// <summary>
-        /// Required method for Designer support - do not modify
-        /// the contents of this method with the code editor.
-        /// </summary>
         private void InitializeComponent()
         {
-            this.lblTitre = new System.Windows.Forms.Label();
-            this.lblNom = new System.Windows.Forms.Label();
-            this.txtNom = new System.Windows.Forms.TextBox();
-            this.lblPrenom = new System.Windows.Forms.Label();
-            this.txtPrenom = new System.Windows.Forms.TextBox();
-            this.lblEmail = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.lblPassword = new System.Windows.Forms.Label();
-            this.txtPassword = new System.Windows.Forms.TextBox();
-            this.lblConfirmPassword = new System.Windows.Forms.Label();
-            this.txtConfirmPassword = new System.Windows.Forms.TextBox();
-            this.btnSauvegarder = new System.Windows.Forms.Button();
-            this.btnAnnuler = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            lblTitre = new Label();
+            lblNom = new Label();
+            txtNom = new TextBox();
+            lblPrenom = new Label();
+            txtPrenom = new TextBox();
+            lblEmail = new Label();
+            txtEmail = new TextBox();
+            chkModifierMotDePasse = new CheckBox();
+            lblMotDePasseActuel = new Label();
+            txtMotDePasseActuel = new TextBox();
+            lblNouveauMotDePasse = new Label();
+            txtNouveauMotDePasse = new TextBox();
+            lblConfirmerMotDePasse = new Label();
+            txtConfirmerMotDePasse = new TextBox();
+            btnSauvegarder = new Button();
+            btnAnnuler = new Button();
+            panelFormulaire = new Panel();
+            panelFormulaire.SuspendLayout();
+            SuspendLayout();
             // 
             // lblTitre
             // 
-            this.lblTitre.AutoSize = true;
-            this.lblTitre.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
-            this.lblTitre.ForeColor = System.Drawing.Color.White;
-            this.lblTitre.Location = new System.Drawing.Point(30, 30);
-            this.lblTitre.Name = "lblTitre";
-            this.lblTitre.Size = new System.Drawing.Size(220, 30);
-            this.lblTitre.TabIndex = 0;
-            this.lblTitre.Text = "Modifier le profil";
+            lblTitre.AutoSize = true;
+            lblTitre.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
+            lblTitre.ForeColor = Color.FromArgb(229, 9, 20);
+            lblTitre.Location = new Point(29, 33);
+            lblTitre.Margin = new Padding(4, 0, 4, 0);
+            lblTitre.Name = "lblTitre";
+            lblTitre.Size = new Size(278, 45);
+            lblTitre.TabIndex = 0;
+            lblTitre.Text = "Modifier le profil";
+            lblTitre.Click += lblTitre_Click;
             // 
             // lblNom
             // 
-            this.lblNom.AutoSize = true;
-            this.lblNom.ForeColor = System.Drawing.Color.White;
-            this.lblNom.Location = new System.Drawing.Point(30, 90);
-            this.lblNom.Name = "lblNom";
-            this.lblNom.Size = new System.Drawing.Size(37, 15);
-            this.lblNom.TabIndex = 1;
-            this.lblNom.Text = "Nom:";
+            lblNom.AutoSize = true;
+            lblNom.Font = new Font("Segoe UI", 10F);
+            lblNom.Location = new Point(29, 33);
+            lblNom.Margin = new Padding(4, 0, 4, 0);
+            lblNom.Name = "lblNom";
+            lblNom.Size = new Size(60, 28);
+            lblNom.TabIndex = 0;
+            lblNom.Text = "Nom:";
             // 
             // txtNom
             // 
-            this.txtNom.Location = new System.Drawing.Point(150, 87);
-            this.txtNom.Name = "txtNom";
-            this.txtNom.Size = new System.Drawing.Size(250, 23);
-            this.txtNom.TabIndex = 2;
+            txtNom.Font = new Font("Segoe UI", 10F);
+            txtNom.Location = new Point(143, 33);
+            txtNom.Margin = new Padding(4, 5, 4, 5);
+            txtNom.Name = "txtNom";
+            txtNom.Size = new Size(484, 34);
+            txtNom.TabIndex = 1;
             // 
             // lblPrenom
             // 
-            this.lblPrenom.AutoSize = true;
-            this.lblPrenom.ForeColor = System.Drawing.Color.White;
-            this.lblPrenom.Location = new System.Drawing.Point(30, 130);
-            this.lblPrenom.Name = "lblPrenom";
-            this.lblPrenom.Size = new System.Drawing.Size(52, 15);
-            this.lblPrenom.TabIndex = 3;
-            this.lblPrenom.Text = "Prénom:";
+            lblPrenom.AutoSize = true;
+            lblPrenom.Font = new Font("Segoe UI", 10F);
+            lblPrenom.Location = new Point(29, 106);
+            lblPrenom.Margin = new Padding(4, 0, 4, 0);
+            lblPrenom.Name = "lblPrenom";
+            lblPrenom.Size = new Size(84, 28);
+            lblPrenom.TabIndex = 2;
+            lblPrenom.Text = "Prénom:";
             // 
             // txtPrenom
             // 
-            this.txtPrenom.Location = new System.Drawing.Point(150, 127);
-            this.txtPrenom.Name = "txtPrenom";
-            this.txtPrenom.Size = new System.Drawing.Size(250, 23);
-            this.txtPrenom.TabIndex = 4;
+            txtPrenom.Font = new Font("Segoe UI", 10F);
+            txtPrenom.Location = new Point(143, 100);
+            txtPrenom.Margin = new Padding(4, 5, 4, 5);
+            txtPrenom.Name = "txtPrenom";
+            txtPrenom.Size = new Size(484, 34);
+            txtPrenom.TabIndex = 3;
+            txtPrenom.TextChanged += txtPrenom_TextChanged;
             // 
             // lblEmail
             // 
-            this.lblEmail.AutoSize = true;
-            this.lblEmail.ForeColor = System.Drawing.Color.White;
-            this.lblEmail.Location = new System.Drawing.Point(30, 170);
-            this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(44, 15);
-            this.lblEmail.TabIndex = 5;
-            this.lblEmail.Text = "Courriel:";
+            lblEmail.AutoSize = true;
+            lblEmail.Font = new Font("Segoe UI", 10F);
+            lblEmail.Location = new Point(29, 186);
+            lblEmail.Margin = new Padding(4, 0, 4, 0);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(63, 28);
+            lblEmail.TabIndex = 4;
+            lblEmail.Text = "Email:";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(150, 167);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(250, 23);
-            this.txtEmail.TabIndex = 6;
+            txtEmail.Font = new Font("Segoe UI", 10F);
+            txtEmail.Location = new Point(143, 180);
+            txtEmail.Margin = new Padding(4, 5, 4, 5);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(484, 34);
+            txtEmail.TabIndex = 5;
             // 
-            // lblPassword
+            // chkModifierMotDePasse
             // 
-            this.lblPassword.AutoSize = true;
-            this.lblPassword.ForeColor = System.Drawing.Color.White;
-            this.lblPassword.Location = new System.Drawing.Point(30, 210);
-            this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(76, 15);
-            this.lblPassword.TabIndex = 7;
-            this.lblPassword.Text = "Mot de passe:";
+            chkModifierMotDePasse.AutoSize = true;
+            chkModifierMotDePasse.Font = new Font("Segoe UI", 10F);
+            chkModifierMotDePasse.Location = new Point(29, 252);
+            chkModifierMotDePasse.Margin = new Padding(4, 5, 4, 5);
+            chkModifierMotDePasse.Name = "chkModifierMotDePasse";
+            chkModifierMotDePasse.Size = new Size(254, 32);
+            chkModifierMotDePasse.TabIndex = 6;
+            chkModifierMotDePasse.Text = "Modifier le mot de passe";
+            chkModifierMotDePasse.UseVisualStyleBackColor = true;
+            chkModifierMotDePasse.CheckedChanged += ChkModifierMotDePasse_CheckedChanged;
             // 
-            // txtPassword
+            // lblMotDePasseActuel
             // 
-            this.txtPassword.Location = new System.Drawing.Point(150, 207);
-            this.txtPassword.Name = "txtPassword";
-            this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(250, 23);
-            this.txtPassword.TabIndex = 8;
+            lblMotDePasseActuel.AutoSize = true;
+            lblMotDePasseActuel.Font = new Font("Segoe UI", 10F);
+            lblMotDePasseActuel.Location = new Point(29, 305);
+            lblMotDePasseActuel.Margin = new Padding(4, 0, 4, 0);
+            lblMotDePasseActuel.Name = "lblMotDePasseActuel";
+            lblMotDePasseActuel.Size = new Size(190, 28);
+            lblMotDePasseActuel.TabIndex = 7;
+            lblMotDePasseActuel.Text = "Mot de passe actuel:";
+            lblMotDePasseActuel.Visible = false;
             // 
-            // lblConfirmPassword
+            // txtMotDePasseActuel
             // 
-            this.lblConfirmPassword.AutoSize = true;
-            this.lblConfirmPassword.ForeColor = System.Drawing.Color.White;
-            this.lblConfirmPassword.Location = new System.Drawing.Point(30, 250);
-            this.lblConfirmPassword.Name = "lblConfirmPassword";
-            this.lblConfirmPassword.Size = new System.Drawing.Size(114, 15);
-            this.lblConfirmPassword.TabIndex = 9;
-            this.lblConfirmPassword.Text = "Confirmer mot de passe:";
+            txtMotDePasseActuel.Font = new Font("Segoe UI", 10F);
+            txtMotDePasseActuel.Location = new Point(243, 302);
+            txtMotDePasseActuel.Margin = new Padding(4, 5, 4, 5);
+            txtMotDePasseActuel.Name = "txtMotDePasseActuel";
+            txtMotDePasseActuel.PasswordChar = '•';
+            txtMotDePasseActuel.Size = new Size(384, 34);
+            txtMotDePasseActuel.TabIndex = 8;
+            txtMotDePasseActuel.Visible = false;
             // 
-            // txtConfirmPassword
+            // lblNouveauMotDePasse
             // 
-            this.txtConfirmPassword.Location = new System.Drawing.Point(150, 247);
-            this.txtConfirmPassword.Name = "txtConfirmPassword";
-            this.txtConfirmPassword.PasswordChar = '*';
-            this.txtConfirmPassword.Size = new System.Drawing.Size(250, 23);
-            this.txtConfirmPassword.TabIndex = 10;
+            lblNouveauMotDePasse.AutoSize = true;
+            lblNouveauMotDePasse.Font = new Font("Segoe UI", 10F);
+            lblNouveauMotDePasse.Location = new Point(29, 384);
+            lblNouveauMotDePasse.Margin = new Padding(4, 0, 4, 0);
+            lblNouveauMotDePasse.Name = "lblNouveauMotDePasse";
+            lblNouveauMotDePasse.Size = new Size(258, 28);
+            lblNouveauMotDePasse.TabIndex = 9;
+            lblNouveauMotDePasse.Text = "Nouveau mot de passe (6+):";
+            lblNouveauMotDePasse.Visible = false;
+            lblNouveauMotDePasse.Click += lblNouveauMotDePasse_Click;
+            // 
+            // txtNouveauMotDePasse
+            // 
+            txtNouveauMotDePasse.Font = new Font("Segoe UI", 10F);
+            txtNouveauMotDePasse.Location = new Point(295, 381);
+            txtNouveauMotDePasse.Margin = new Padding(4, 5, 4, 5);
+            txtNouveauMotDePasse.Name = "txtNouveauMotDePasse";
+            txtNouveauMotDePasse.PasswordChar = '•';
+            txtNouveauMotDePasse.Size = new Size(332, 34);
+            txtNouveauMotDePasse.TabIndex = 10;
+            txtNouveauMotDePasse.Visible = false;
+            txtNouveauMotDePasse.TextChanged += txtNouveauMotDePasse_TextChanged;
+            // 
+            // lblConfirmerMotDePasse
+            // 
+            lblConfirmerMotDePasse.AutoSize = true;
+            lblConfirmerMotDePasse.Font = new Font("Segoe UI", 10F);
+            lblConfirmerMotDePasse.Location = new Point(29, 469);
+            lblConfirmerMotDePasse.Margin = new Padding(4, 0, 4, 0);
+            lblConfirmerMotDePasse.Name = "lblConfirmerMotDePasse";
+            lblConfirmerMotDePasse.Size = new Size(224, 28);
+            lblConfirmerMotDePasse.TabIndex = 11;
+            lblConfirmerMotDePasse.Text = "Confirmer mot de passe:";
+            lblConfirmerMotDePasse.Visible = false;
+            // 
+            // txtConfirmerMotDePasse
+            // 
+            txtConfirmerMotDePasse.Font = new Font("Segoe UI", 10F);
+            txtConfirmerMotDePasse.Location = new Point(295, 463);
+            txtConfirmerMotDePasse.Margin = new Padding(4, 5, 4, 5);
+            txtConfirmerMotDePasse.Name = "txtConfirmerMotDePasse";
+            txtConfirmerMotDePasse.PasswordChar = '•';
+            txtConfirmerMotDePasse.Size = new Size(332, 34);
+            txtConfirmerMotDePasse.TabIndex = 12;
+            txtConfirmerMotDePasse.Visible = false;
             // 
             // btnSauvegarder
             // 
-            this.btnSauvegarder.BackColor = System.Drawing.Color.FromArgb(0, 120, 215);
-            this.btnSauvegarder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSauvegarder.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
-            this.btnSauvegarder.ForeColor = System.Drawing.Color.White;
-            this.btnSauvegarder.Location = new System.Drawing.Point(150, 300);
-            this.btnSauvegarder.Name = "btnSauvegarder";
-            this.btnSauvegarder.Size = new System.Drawing.Size(120, 35);
-            this.btnSauvegarder.TabIndex = 11;
-            this.btnSauvegarder.Text = "Sauvegarder";
-            this.btnSauvegarder.UseVisualStyleBackColor = false;
-            this.btnSauvegarder.Click += new System.EventHandler(this.BtnSauvegarder_Click);
+            btnSauvegarder.BackColor = Color.FromArgb(229, 9, 20);
+            btnSauvegarder.Cursor = Cursors.Hand;
+            btnSauvegarder.FlatAppearance.BorderSize = 0;
+            btnSauvegarder.FlatStyle = FlatStyle.Flat;
+            btnSauvegarder.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnSauvegarder.ForeColor = Color.White;
+            btnSauvegarder.Location = new Point(29, 707);
+            btnSauvegarder.Margin = new Padding(4, 5, 4, 5);
+            btnSauvegarder.Name = "btnSauvegarder";
+            btnSauvegarder.Size = new Size(314, 75);
+            btnSauvegarder.TabIndex = 2;
+            btnSauvegarder.Text = "Sauvegarder";
+            btnSauvegarder.UseVisualStyleBackColor = false;
+            btnSauvegarder.Click += BtnSauvegarder_Click;
             // 
             // btnAnnuler
             // 
-            this.btnAnnuler.BackColor = System.Drawing.Color.FromArgb(60, 60, 60);
-            this.btnAnnuler.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAnnuler.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.btnAnnuler.ForeColor = System.Drawing.Color.White;
-            this.btnAnnuler.Location = new System.Drawing.Point(280, 300);
-            this.btnAnnuler.Name = "btnAnnuler";
-            this.btnAnnuler.Size = new System.Drawing.Size(120, 35);
-            this.btnAnnuler.TabIndex = 12;
-            this.btnAnnuler.Text = "Annuler";
-            this.btnAnnuler.UseVisualStyleBackColor = false;
-            this.btnAnnuler.Click += new System.EventHandler(this.BtnAnnuler_Click);
+            btnAnnuler.BackColor = Color.FromArgb(108, 117, 125);
+            btnAnnuler.Cursor = Cursors.Hand;
+            btnAnnuler.FlatAppearance.BorderSize = 0;
+            btnAnnuler.FlatStyle = FlatStyle.Flat;
+            btnAnnuler.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnAnnuler.ForeColor = Color.White;
+            btnAnnuler.Location = new Point(381, 707);
+            btnAnnuler.Margin = new Padding(4, 5, 4, 5);
+            btnAnnuler.Name = "btnAnnuler";
+            btnAnnuler.Size = new Size(314, 75);
+            btnAnnuler.TabIndex = 3;
+            btnAnnuler.Text = "Annuler";
+            btnAnnuler.UseVisualStyleBackColor = false;
+            btnAnnuler.Click += BtnAnnuler_Click;
+            // 
+            // panelFormulaire
+            // 
+            panelFormulaire.BackColor = Color.White;
+            panelFormulaire.Controls.Add(lblNom);
+            panelFormulaire.Controls.Add(txtNom);
+            panelFormulaire.Controls.Add(lblPrenom);
+            panelFormulaire.Controls.Add(txtPrenom);
+            panelFormulaire.Controls.Add(lblEmail);
+            panelFormulaire.Controls.Add(txtEmail);
+            panelFormulaire.Controls.Add(chkModifierMotDePasse);
+            panelFormulaire.Controls.Add(lblMotDePasseActuel);
+            panelFormulaire.Controls.Add(txtMotDePasseActuel);
+            panelFormulaire.Controls.Add(lblNouveauMotDePasse);
+            panelFormulaire.Controls.Add(txtNouveauMotDePasse);
+            panelFormulaire.Controls.Add(lblConfirmerMotDePasse);
+            panelFormulaire.Controls.Add(txtConfirmerMotDePasse);
+            panelFormulaire.Location = new Point(29, 117);
+            panelFormulaire.Margin = new Padding(4, 5, 4, 5);
+            panelFormulaire.Name = "panelFormulaire";
+            panelFormulaire.Size = new Size(678, 552);
+            panelFormulaire.TabIndex = 1;
             // 
             // FormulaireUtilisateur
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(20, 20, 20);
-            this.ClientSize = new System.Drawing.Size(450, 370);
-            this.Controls.Add(this.btnAnnuler);
-            this.Controls.Add(this.btnSauvegarder);
-            this.Controls.Add(this.txtConfirmPassword);
-            this.Controls.Add(this.lblConfirmPassword);
-            this.Controls.Add(this.txtPassword);
-            this.Controls.Add(this.lblPassword);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.lblEmail);
-            this.Controls.Add(this.txtPrenom);
-            this.Controls.Add(this.lblPrenom);
-            this.Controls.Add(this.txtNom);
-            this.Controls.Add(this.lblNom);
-            this.Controls.Add(this.lblTitre);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "FormulaireUtilisateur";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "VisionFlix - Modifier le profil";
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.FromArgb(245, 245, 245);
+            ClientSize = new Size(730, 813);
+            Controls.Add(btnAnnuler);
+            Controls.Add(btnSauvegarder);
+            Controls.Add(panelFormulaire);
+            Controls.Add(lblTitre);
+            FormBorderStyle = FormBorderStyle.FixedDialog;
+            Margin = new Padding(4, 5, 4, 5);
+            MaximizeBox = false;
+            MinimizeBox = false;
+            Name = "FormulaireUtilisateur";
+            StartPosition = FormStartPosition.CenterParent;
+            Text = "VisionFlix - Modifier le profil";
+            panelFormulaire.ResumeLayout(false);
+            panelFormulaire.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private System.Windows.Forms.Label lblTitre;
+        private System.Windows.Forms.Panel panelFormulaire;
         private System.Windows.Forms.Label lblNom;
         private System.Windows.Forms.TextBox txtNom;
         private System.Windows.Forms.Label lblPrenom;
         private System.Windows.Forms.TextBox txtPrenom;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.Label lblPassword;
-        private System.Windows.Forms.TextBox txtPassword;
-        private System.Windows.Forms.Label lblConfirmPassword;
-        private System.Windows.Forms.TextBox txtConfirmPassword;
+        private System.Windows.Forms.CheckBox chkModifierMotDePasse;
+        private System.Windows.Forms.Label lblMotDePasseActuel;
+        private System.Windows.Forms.TextBox txtMotDePasseActuel;
+        private System.Windows.Forms.Label lblNouveauMotDePasse;
+        private System.Windows.Forms.TextBox txtNouveauMotDePasse;
+        private System.Windows.Forms.Label lblConfirmerMotDePasse;
+        private System.Windows.Forms.TextBox txtConfirmerMotDePasse;
         private System.Windows.Forms.Button btnSauvegarder;
         private System.Windows.Forms.Button btnAnnuler;
     }
