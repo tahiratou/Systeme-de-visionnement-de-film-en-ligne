@@ -1,4 +1,0 @@
-C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix\obj\Debug\VisionFlix.csproj.AssemblyReference.cache
-C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\TP3\VisionFlix\VisionFlix\obj\Debug\VisionFlix.csproj.CoreCompileInputs.cache
-C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix\obj\Debug\VisionFlix.csproj.AssemblyReference.cache
-C:\Users\tidia\Desktop\Genie Logiciel II\Travail2Session\VisionFlix\obj\Debug\VisionFlix.csproj.CoreCompileInputs.cache
