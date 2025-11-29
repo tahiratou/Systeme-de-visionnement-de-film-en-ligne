@@ -145,7 +145,8 @@ CREATE TABLE Visionnements (
     UtilisateurId INT NOT NULL,
     FilmId INT NOT NULL,
     DateVisionnement DATETIME NOT NULL DEFAULT GETDATE(),
-    
+    ProgressionEnSecondes INT NULL,
+    EstComplete BIT NOT NULL DEFAULT 0,
     CONSTRAINT FK_Visionnements_Utilisateurs 
         FOREIGN KEY (UtilisateurId) 
         REFERENCES Utilisateurs(Id) 
@@ -169,7 +170,7 @@ CREATE TABLE Notations (
     FilmId INT NOT NULL,
     Note INT NOT NULL CHECK (Note BETWEEN 1 AND 5),
     DateNotation DATETIME NOT NULL DEFAULT GETDATE(),
-    
+    Commentaire NVARCHAR(MAX),
     CONSTRAINT FK_Notations_Utilisateurs 
         FOREIGN KEY (UtilisateurId) 
         REFERENCES Utilisateurs(Id) 

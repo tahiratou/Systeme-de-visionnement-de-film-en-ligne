@@ -11,17 +11,13 @@ namespace VisionFlix.Presentation.Forms
             InitializeComponent();
             this.Text = "VisionFlix - Ajouter un film";
             
-            // GARDEZ votre code Designer.cs existant
-            // Assurez-vous que cmbGenre.SelectedIndex = 0; est appelé
         }
 
-        // Méthode pour pré-remplir le formulaire en mode modification
         public void SetFilm(Film film)
         {
             _filmToEdit = film;
             this.Text = "VisionFlix - Modifier un film";
 
-            // Pré-remplir les contrôles (ajustez selon vos noms de contrôles)
             txtTitle.Text = film.Titre;
             txtDirector.Text = film.Realisateur;
             numYear.Value = film.Annee;
@@ -33,7 +29,6 @@ namespace VisionFlix.Presentation.Forms
             numPrice.Value = film.Prix;
         }
 
-        // Méthode pour récupérer le film depuis le formulaire
         public Film GetFilm()
         {
             return new Film
@@ -55,7 +50,6 @@ namespace VisionFlix.Presentation.Forms
 
         private void BtnSave_Click(object? sender, EventArgs e)
         {
-            // Validation
             if (string.IsNullOrWhiteSpace(txtTitle.Text))
             {
                 MessageBox.Show("Le titre est obligatoire.", "Erreur",
@@ -81,11 +75,3 @@ namespace VisionFlix.Presentation.Forms
     }
 }
 
-/*
- * INSTRUCTIONS:
- * 1. GARDEZ votre FormulaireFilm.Designer.cs existant TEL QUEL
- * 2. Remplacez le contenu de FormulaireFilm.cs par ce code
- * 3. Vérifiez que vos contrôles ont bien ces noms:
- *    - txtTitle, txtDirector, numYear, numRating, etc.
- * 4. Ajustez les noms si différents dans votre Designer
- */

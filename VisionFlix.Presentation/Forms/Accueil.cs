@@ -10,7 +10,6 @@ namespace VisionFlix.Presentation.Forms
         private readonly IAuthentificationService _authService;
         private readonly IServiceProvider _serviceProvider;
 
-        // CONSTRUCTEUR AVEC INJECTION DE DÉPENDANCES
         public Accueil(
             IFilmService filmService,
             IAuthentificationService authService,
@@ -30,7 +29,7 @@ namespace VisionFlix.Presentation.Forms
 
         private void InitializeData()
         {
-            // Configuration initiale des combos
+            
             cmbGenre.SelectedIndex = 0;
             cmbYear.SelectedIndex = 0;
             cmbRating.SelectedIndex = 0;
@@ -38,7 +37,7 @@ namespace VisionFlix.Presentation.Forms
 
         private void SetupEventHandlers()
         {
-            // Event handlers
+            
             btnSearch.Click += BtnSearch_Click;
             txtSearch.KeyPress += TxtSearch_KeyPress;
             btnApplyFilters.Click += BtnApplyFilters_Click;
@@ -60,6 +59,7 @@ namespace VisionFlix.Presentation.Forms
             }
         }
 
+       
         private async void ApplyFilters()
         {
             try
@@ -69,20 +69,14 @@ namespace VisionFlix.Presentation.Forms
                 string yearFilter = cmbYear.SelectedItem?.ToString() ?? "Toutes";
                 double minRating = GetMinRatingFromSelection(cmbRating.SelectedIndex);
 
-                // Convertir le filtre année
-                int? annee = null;
-                if (int.TryParse(yearFilter, out int year))
-                {
-                    annee = year;
-                }
-
-                // Appeler le service
                 var films = await _filmService.SearchFilmsAsync(
                     titre: string.IsNullOrWhiteSpace(searchText) ? null : searchText,
                     genre: selectedGenre == "Tous" ? null : selectedGenre,
-                    annee: annee,
+                    annee: null,  
                     noteMinimum: minRating > 0 ? minRating : null
                 );
+
+                films = FilterByYear(films, yearFilter);
 
                 AfficherFilms(films);
             }
@@ -91,6 +85,25 @@ namespace VisionFlix.Presentation.Forms
                 MessageBox.Show($"Erreur lors de la recherche : {ex.Message}",
                     "Erreur", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+     
+        private IEnumerable<Film> FilterByYear(IEnumerable<Film> films, string yearFilter)
+        {
+            return yearFilter switch
+            {
+                "Toutes" => films,
+                "2024" => films.Where(f => f.Annee == 2024),
+                "2023" => films.Where(f => f.Annee == 2023),
+                "2022" => films.Where(f => f.Annee == 2022),
+                "2021" => films.Where(f => f.Annee == 2021),
+                "2020" => films.Where(f => f.Annee == 2020),
+                "2010-2019" => films.Where(f => f.Annee >= 2010 && f.Annee <= 2019),
+                "2000-2009" => films.Where(f => f.Annee >= 2000 && f.Annee <= 2009),
+                "1990-1999" => films.Where(f => f.Annee >= 1990 && f.Annee <= 1999),
+                "Classiques" => films.Where(f => f.Annee < 1990),
+                _ => films
+            };
         }
 
         private void AfficherFilms(IEnumerable<Film> films)
@@ -115,11 +128,9 @@ namespace VisionFlix.Presentation.Forms
         {
             var detailsForm = _serviceProvider.GetRequiredService<DetailsFilm>();
 
-            // Passer le film au formulaire DetailsFilm
             detailsForm.SetFilm(film);
             detailsForm.ShowDialog();
 
-            // Rafraîchir si nécessaire
             LoadFilms();
         }
 
@@ -153,7 +164,6 @@ namespace VisionFlix.Presentation.Forms
 
         private void BtnProfil_Click(object? sender, EventArgs e)
         {
-            // ✅ VÉRIFIER QUE L'UTILISATEUR EST CONNECTÉ
             if (_authService.CurrentUser == null)
             {
                 MessageBox.Show(
@@ -167,14 +177,9 @@ namespace VisionFlix.Presentation.Forms
 
             try
             {
-                // ✅ CRÉER ProfilUtilisateur EN PASSANT L'UTILISATEUR MANUELLEMENT
-                // ProfilUtilisateur a besoin de:
-                // 1. Utilisateur (l'utilisateur connecté)
-                // 2. IServiceProvider (pour les dépendances)
-
                 var profilForm = new ProfilUtilisateur(
-                    _authService.CurrentUser,    // ✅ Passer l'utilisateur connecté
-                    _serviceProvider             // ✅ Passer le ServiceProvider
+                    _authService.CurrentUser,   
+                    _serviceProvider             
                 );
 
                 profilForm.ShowDialog();

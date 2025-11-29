@@ -28,6 +28,5 @@ namespace VisionFlix.Domain.Entities
 
         [ForeignKey("FilmId")]
         public virtual Film Film { get; set; } = null!;
-        public decimal Prix { get; set; }
     }
 }

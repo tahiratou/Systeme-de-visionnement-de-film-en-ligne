@@ -189,20 +189,3 @@ VALUES
 );
 GO
 
-PRINT 'Films insérés: ' + CAST(@@ROWCOUNT AS VARCHAR);
-GO
-
--- ============================================================
--- VÉRIFICATION DES DONNÉES INSÉRÉES
--- ============================================================
-
-PRINT '';
-PRINT '========== RÉSUMÉ DES DONNÉES ==========';
-PRINT 'Plans d''abonnement: ' + CAST((SELECT COUNT(*) FROM PlansAbonnement) AS VARCHAR);
-PRINT 'Catégories: ' + CAST((SELECT COUNT(*) FROM Categories) AS VARCHAR);
-PRINT 'Langues: ' + CAST((SELECT COUNT(*) FROM Langues) AS VARCHAR);
-PRINT 'Utilisateurs: ' + CAST((SELECT COUNT(*) FROM Utilisateurs) AS VARCHAR);
-PRINT 'Films: ' + CAST((SELECT COUNT(*) FROM Films) AS VARCHAR);
-PRINT '';
-PRINT 'Toutes les données de base insérées avec succès!';
-GO
