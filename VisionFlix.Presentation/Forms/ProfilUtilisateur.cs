@@ -27,7 +27,7 @@ namespace VisionFlix.Presentation.Forms
             ConfigurerAffichageSelonRole();
         }
 
-        
+
         private void ConfigurerBoutonGestion()
         {
             if (_user.EstAdministrateur)
@@ -42,7 +42,7 @@ namespace VisionFlix.Presentation.Forms
             }
         }
 
-       
+
         private void ConfigurerAffichageSelonRole()
         {
             if (_user.EstAdministrateur)
@@ -74,7 +74,7 @@ namespace VisionFlix.Presentation.Forms
 
             if (formulaireUtilisateur.ShowDialog() == DialogResult.OK)
             {
-                LoadUserData(); 
+                LoadUserData();
             }
         }
 
@@ -94,7 +94,7 @@ namespace VisionFlix.Presentation.Forms
             }
         }
 
-        
+
         private void OuvrirPanneauAdmin()
         {
             try
@@ -137,6 +137,11 @@ namespace VisionFlix.Presentation.Forms
         private void BtnFermer_Click(object? sender, EventArgs e)
         {
             Close();
+        }
+
+        private void lblEmailValue_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

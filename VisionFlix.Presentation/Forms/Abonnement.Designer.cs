@@ -2,12 +2,9 @@
 {
     partial class Abonnement
     {
-        /// <summary>
-        /// Required designer variable.
-        /// </summary>
+        
         private System.ComponentModel.IContainer components = null;
 
-        // Déclaration des contrôles utilisés dans Abonnement.cs
         private System.Windows.Forms.Label lblTitre;
         private System.Windows.Forms.Panel panelBasic;
         private System.Windows.Forms.Label lblBasicNom;
@@ -27,9 +24,7 @@
         private System.Windows.Forms.Label lblPremiumDescription;
         private System.Windows.Forms.Label lblPlatinumDescription;
 
-        /// <summary>
-        /// Clean up any resources being used.
-        /// </summary>
+        
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
@@ -67,15 +62,12 @@
             this.lblPremiumDescription = new System.Windows.Forms.Label();
             this.lblPlatinumDescription = new System.Windows.Forms.Label();
 
-            // Initialisation des panneaux pour la suspension de layout
             this.panelBasic.SuspendLayout();
             this.panelPremium.SuspendLayout();
             this.panelPlatinum.SuspendLayout();
             this.SuspendLayout();
 
-            // 
-            // lblTitre
-            // 
+            
             this.lblTitre.Font = new System.Drawing.Font("Segoe UI", 16F, System.Drawing.FontStyle.Bold);
             this.lblTitre.ForeColor = System.Drawing.Color.White;
             this.lblTitre.Location = new System.Drawing.Point(12, 20);

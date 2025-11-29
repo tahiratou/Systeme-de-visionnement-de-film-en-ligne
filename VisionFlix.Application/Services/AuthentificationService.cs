@@ -18,18 +18,13 @@ namespace VisionFlix.Application.Services
 
         public async Task<Utilisateur?> ConnecterAsync(string identifiant, string motDePasse)
         {
-            // ❌ ERREUR CORRIGÉE: Utilise _utilisateurRepository au lieu de _context
 
-            // Chercher par NomUtilisateur (comme demandé - pas d'email!)
             var utilisateur = await _utilisateurRepository.GetByNomUtilisateurAsync(identifiant);
 
-            // Vérifier le mot de passe
             if (utilisateur != null && utilisateur.MotDePasse == motDePasse)
             {
-                // ✅ Mettre à jour la session actuelle
                 _currentUser = utilisateur;
 
-                // ✅ Mettre à jour la date de dernière connexion
                 utilisateur.DerniereConnexion = DateTime.Now;
                 await _utilisateurRepository.UpdateAsync(utilisateur);
 

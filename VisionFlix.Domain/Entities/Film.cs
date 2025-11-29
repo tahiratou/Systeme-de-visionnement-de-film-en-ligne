@@ -27,7 +27,7 @@ namespace VisionFlix.Domain.Entities
         public double Note { get; set; }
 
         [Required]
-        public int Duree { get; set; } // en minutes
+        public int Duree { get; set; }
 
         [Required]
         [MaxLength(50)]

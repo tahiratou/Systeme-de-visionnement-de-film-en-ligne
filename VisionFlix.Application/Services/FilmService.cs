@@ -30,7 +30,6 @@ namespace VisionFlix.Application.Services
 
         public async Task<Film> AddFilmAsync(Film film)
         {
-            // Validation métier
             if (string.IsNullOrWhiteSpace(film.Titre))
                 throw new ArgumentException("Le titre du film est requis.");
 
@@ -48,7 +47,6 @@ namespace VisionFlix.Application.Services
 
         public async Task UpdateFilmAsync(Film film)
         {
-            // Validation métier
             if (string.IsNullOrWhiteSpace(film.Titre))
                 throw new ArgumentException("Le titre du film est requis.");
 
@@ -65,7 +63,6 @@ namespace VisionFlix.Application.Services
             if (film == null)
                 throw new InvalidOperationException("Film introuvable.");
 
-            // Soft delete
             film.EstDisponible = false;
             await _filmRepository.UpdateAsync(film);
         }

@@ -28,7 +28,6 @@ namespace VisionFlix.Infrastructure.Repositories
                 .FirstOrDefaultAsync(u => u.Email == email);
         }
 
-        // ✅✅✅ MÉTHODE AJOUTÉE
         public async Task<Utilisateur?> GetByNomUtilisateurAsync(string nomUtilisateur)
         {
             return await _context.Utilisateurs

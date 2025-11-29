@@ -10,7 +10,6 @@ namespace VisionFlix.Infrastructure.Data
         {
         }
 
-        // DbSets
         public DbSet<Film> Films { get; set; } = null!;
         public DbSet<Utilisateur> Utilisateurs { get; set; } = null!;
         public DbSet<Categorie> Categories { get; set; } = null!;
@@ -25,7 +24,6 @@ namespace VisionFlix.Infrastructure.Data
         {
             base.OnModelCreating(modelBuilder);
 
-            // ===== CONFIGURATION FILM =====
             modelBuilder.Entity<Film>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -69,14 +67,12 @@ namespace VisionFlix.Infrastructure.Data
 
                 entity.Property(e => e.DerniereConnexion).IsRequired(false);
 
-                // Relation avec PlanAbonnement
                 entity.HasOne(e => e.PlanAbonnement)
                     .WithMany(p => p.Utilisateurs)
                     .HasForeignKey(e => e.PlanAbonnementId)
                     .OnDelete(DeleteBehavior.SetNull);
             });
 
-            // ===== CONFIGURATION PLANABONNEMENT =====
             modelBuilder.Entity<PlanAbonnement>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -86,7 +82,6 @@ namespace VisionFlix.Infrastructure.Data
                 entity.Property(e => e.EstActif).IsRequired().HasDefaultValue(true);
             });
 
-            // ===== CONFIGURATION CATEGORIE =====
             modelBuilder.Entity<Categorie>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -96,7 +91,6 @@ namespace VisionFlix.Infrastructure.Data
                 entity.HasIndex(e => e.Nom).IsUnique();
             });
 
-            // ===== CONFIGURATION LANGUE =====
             modelBuilder.Entity<Langue>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -106,7 +100,6 @@ namespace VisionFlix.Infrastructure.Data
                 entity.HasIndex(e => e.Code).IsUnique();
             });
 
-            // ===== CONFIGURATION ACHAT =====
             modelBuilder.Entity<Achat>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -128,7 +121,6 @@ namespace VisionFlix.Infrastructure.Data
                 entity.HasIndex(e => new { e.UtilisateurId, e.FilmId }).IsUnique();
             });
 
-            // ===== CONFIGURATION VISIONNEMENT =====
             modelBuilder.Entity<Visionnement>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -148,7 +140,6 @@ namespace VisionFlix.Infrastructure.Data
                 entity.HasIndex(e => e.FilmId);
             });
 
-            // ===== CONFIGURATION NOTATION =====
             modelBuilder.Entity<Notation>(entity =>
             {
                 entity.HasKey(e => e.Id);
@@ -169,7 +160,6 @@ namespace VisionFlix.Infrastructure.Data
                 entity.HasIndex(e => new { e.UtilisateurId, e.FilmId }).IsUnique();
             });
 
-            // ===== CONFIGURATION TRANSACTION =====
             modelBuilder.Entity<Transaction>(entity =>
             {
                 entity.HasKey(e => e.Id);

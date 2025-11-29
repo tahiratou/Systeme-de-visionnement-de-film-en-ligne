@@ -46,7 +46,7 @@
             // 
             lblTitre.AutoSize = true;
             lblTitre.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblTitre.Location = new Point(30, 30);
+            lblTitre.Location = new Point(30, 25);
             lblTitre.Name = "lblTitre";
             lblTitre.Size = new Size(182, 45);
             lblTitre.TabIndex = 0;
@@ -65,7 +65,7 @@
             // lblNomValue
             // 
             lblNomValue.AutoSize = true;
-            lblNomValue.Location = new Point(200, 100);
+            lblNomValue.Location = new Point(248, 103);
             lblNomValue.Name = "lblNomValue";
             lblNomValue.Size = new Size(115, 25);
             lblNomValue.TabIndex = 2;
@@ -84,11 +84,12 @@
             // lblEmailValue
             // 
             lblEmailValue.AutoSize = true;
-            lblEmailValue.Location = new Point(200, 140);
+            lblEmailValue.Location = new Point(248, 143);
             lblEmailValue.Name = "lblEmailValue";
             lblEmailValue.Size = new Size(145, 25);
             lblEmailValue.TabIndex = 4;
             lblEmailValue.Text = "john@email.com";
+            lblEmailValue.Click += lblEmailValue_Click;
             // 
             // lblSolde
             // 
@@ -103,7 +104,7 @@
             // lblSoldeValue
             // 
             lblSoldeValue.AutoSize = true;
-            lblSoldeValue.Location = new Point(200, 180);
+            lblSoldeValue.Location = new Point(249, 183);
             lblSoldeValue.Name = "lblSoldeValue";
             lblSoldeValue.Size = new Size(81, 25);
             lblSoldeValue.TabIndex = 6;
@@ -122,7 +123,7 @@
             // lblAbonnementValue
             // 
             lblAbonnementValue.AutoSize = true;
-            lblAbonnementValue.Location = new Point(239, 223);
+            lblAbonnementValue.Location = new Point(249, 223);
             lblAbonnementValue.Name = "lblAbonnementValue";
             lblAbonnementValue.Size = new Size(91, 25);
             lblAbonnementValue.TabIndex = 8;

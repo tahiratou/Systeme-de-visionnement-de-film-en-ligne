@@ -21,20 +21,17 @@ namespace VisionFlix.Infrastructure.Repositories
 
         public async Task<IEnumerable<PlanAbonnement>> GetAllAsync()
         {
-            // ? SOLUTION: Utiliser AsNoTracking() pour éviter les problèmes de threading
-            // AsNoTracking() crée des entités en lecture seule qui ne sont pas trackées
-            // par le DbContext, ce qui évite les conflits de threads
+      
             return await _context.PlansAbonnement
-                .AsNoTracking()              // ? Ajout d'AsNoTracking()
+                .AsNoTracking()             
                 .OrderBy(p => p.Prix)
                 .ToListAsync();
         }
 
         public async Task<IEnumerable<PlanAbonnement>> GetActiveAsync()
         {
-            // ? Même correction pour cette méthode
             return await _context.PlansAbonnement
-                .AsNoTracking()              // ? Ajout d'AsNoTracking()
+                .AsNoTracking()    
                 .Where(p => p.EstActif)
                 .OrderBy(p => p.Prix)
                 .ToListAsync();
@@ -42,9 +39,8 @@ namespace VisionFlix.Infrastructure.Repositories
 
         public async Task<PlanAbonnement?> GetByNomAsync(string nom)
         {
-            // ? Même correction pour cette méthode
             return await _context.PlansAbonnement
-                .AsNoTracking()              // ? Ajout d'AsNoTracking()
+                .AsNoTracking()     
                 .FirstOrDefaultAsync(p => p.Nom == nom);
         }
 
