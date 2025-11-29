@@ -41,7 +41,6 @@ namespace VisionFlix.Presentation.Forms
             // 
             lblTitre.AutoSize = true;
             lblTitre.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
-            lblTitre.ForeColor = Color.FromArgb(229, 9, 20);
             lblTitre.Location = new Point(29, 33);
             lblTitre.Margin = new Padding(4, 0, 4, 0);
             lblTitre.Name = "lblTitre";
@@ -139,11 +138,11 @@ namespace VisionFlix.Presentation.Forms
             // txtMotDePasseActuel
             // 
             txtMotDePasseActuel.Font = new Font("Segoe UI", 10F);
-            txtMotDePasseActuel.Location = new Point(243, 302);
+            txtMotDePasseActuel.Location = new Point(295, 302);
             txtMotDePasseActuel.Margin = new Padding(4, 5, 4, 5);
             txtMotDePasseActuel.Name = "txtMotDePasseActuel";
             txtMotDePasseActuel.PasswordChar = '•';
-            txtMotDePasseActuel.Size = new Size(384, 34);
+            txtMotDePasseActuel.Size = new Size(332, 34);
             txtMotDePasseActuel.TabIndex = 8;
             txtMotDePasseActuel.Visible = false;
             // 
@@ -231,7 +230,7 @@ namespace VisionFlix.Presentation.Forms
             // 
             // panelFormulaire
             // 
-            panelFormulaire.BackColor = Color.White;
+            panelFormulaire.BackColor = Color.FromArgb(20, 20, 20);
             panelFormulaire.Controls.Add(lblNom);
             panelFormulaire.Controls.Add(txtNom);
             panelFormulaire.Controls.Add(lblPrenom);
@@ -245,22 +244,23 @@ namespace VisionFlix.Presentation.Forms
             panelFormulaire.Controls.Add(txtNouveauMotDePasse);
             panelFormulaire.Controls.Add(lblConfirmerMotDePasse);
             panelFormulaire.Controls.Add(txtConfirmerMotDePasse);
-            panelFormulaire.Location = new Point(29, 117);
+            panelFormulaire.Location = new Point(13, 100);
             panelFormulaire.Margin = new Padding(4, 5, 4, 5);
             panelFormulaire.Name = "panelFormulaire";
-            panelFormulaire.Size = new Size(678, 552);
+            panelFormulaire.Size = new Size(682, 552);
             panelFormulaire.TabIndex = 1;
             // 
             // FormulaireUtilisateur
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.FromArgb(245, 245, 245);
+            BackColor = Color.FromArgb(20, 20, 20);
             ClientSize = new Size(730, 813);
             Controls.Add(btnAnnuler);
             Controls.Add(btnSauvegarder);
             Controls.Add(panelFormulaire);
             Controls.Add(lblTitre);
+            ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             Margin = new Padding(4, 5, 4, 5);
             MaximizeBox = false;
