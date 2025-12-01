@@ -162,48 +162,85 @@ namespace VisionFlix.Presentation.Forms
             ApplyFilters();
         }
 
-        private void BtnProfil_Click(object? sender, EventArgs e)
-        {
-            if (_authService.CurrentUser == null)
-            {
-                MessageBox.Show(
-                    "Veuillez vous connecter.",
-                    "Erreur",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Warning
-                );
-                return;
-            }
+		// Remplacez votre méthode BtnProfil_Click dans Accueil.cs par celle-ci:
 
-            try
-            {
-                var profilForm = new ProfilUtilisateur(
-                    _authService.CurrentUser,
-                    _serviceProvider,
-                    _authService  
-                );
+		private void BtnProfil_Click(object? sender, EventArgs e)
+		{
+			if (_authService.CurrentUser == null)
+			{
+				MessageBox.Show(
+					"Veuillez vous connecter.",
+					"Erreur",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Warning
+				);
+				return;
+			}
 
-                profilForm.ShowDialog();
-                if (_authService.CurrentUser == null)
-                {
-                    this.Close();
-                }
+			try
+			{
+				var profilForm = new ProfilUtilisateur(
+					_authService.CurrentUser,
+					_serviceProvider,
+					_authService
+				);
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Erreur lors de l'ouverture du profil:\n{ex.Message}",
-                    "Erreur",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+				var resultat = profilForm.ShowDialog();
 
-                System.Diagnostics.Debug.WriteLine($"❌ Erreur profil: {ex.Message}");
-            }
-        }
+				// Si l'utilisateur s'est déconnecté (DialogResult.Abort)
+				if (resultat == DialogResult.Abort)
+				{
+					System.Diagnostics.Debug.WriteLine("🔄 Déconnexion détectée - Fermeture d'Accueil");
 
-        private static double GetMinRatingFromSelection(int index)
+					// Cacher la fenêtre Accueil
+					this.Hide();
+
+					// Ouvrir le formulaire de connexion
+					var connexionForm = _serviceProvider.GetRequiredService<Connexion>();
+					var connexionResultat = connexionForm.ShowDialog();
+
+					if (connexionResultat == DialogResult.OK)
+					{
+						// L'utilisateur s'est reconnecté avec succès
+						System.Diagnostics.Debug.WriteLine("✅ Reconnexion réussie - Réouverture d'Accueil");
+
+						// Recharger les films et rafraîchir l'interface
+						LoadFilms();
+
+						// Réafficher la fenêtre Accueil
+						this.Show();
+					}
+					else
+					{
+						// L'utilisateur a fermé la connexion ou annulé
+						System.Diagnostics.Debug.WriteLine("❌ Connexion annulée - Fermeture de l'application");
+
+						// Fermer l'application complètement
+						System.Windows.Forms.Application.Exit();
+					}
+				}
+				// Sinon, l'utilisateur a juste fermé le profil normalement
+				else if (_authService.CurrentUser == null)
+				{
+					// Cas de sécurité: si CurrentUser est null mais pas de DialogResult.Abort
+					System.Diagnostics.Debug.WriteLine("⚠️ CurrentUser null détecté - Fermeture");
+					this.Close();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(
+					$"Erreur lors de l'ouverture du profil:\n{ex.Message}",
+					"Erreur",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error
+				);
+
+				System.Diagnostics.Debug.WriteLine($"❌ Erreur profil: {ex.Message}");
+			}
+		}
+
+		private static double GetMinRatingFromSelection(int index)
         {
             return index switch
             {

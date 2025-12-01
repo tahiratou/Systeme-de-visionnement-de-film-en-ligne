@@ -5,202 +5,218 @@ using VisionFlix.Domain.Entities;
 
 namespace VisionFlix.Presentation.Forms
 {
-    public partial class ProfilUtilisateur : Form
-    {
-        private readonly Utilisateur _user;
-        private readonly IServiceProvider _serviceProvider;
-        private readonly IAuthentificationService _authService;
-        public ProfilUtilisateur(
-            Utilisateur user,
-            IServiceProvider serviceProvider,
-            IAuthentificationService authService)  
-        {
-            InitializeComponent();
-            this.Text = "VisionFlix - Profil Utilisateur";
+	public partial class ProfilUtilisateur : Form
+	{
+		private readonly Utilisateur _user;
+		private readonly IServiceProvider _serviceProvider;
+		private readonly IAuthentificationService _authService;
+		private bool _deconnexionConfirmee = false; // FLAG pour éviter double confirmation
 
-            _user = user;
-            _serviceProvider = serviceProvider;
-            _authService = authService;  
+		public ProfilUtilisateur(
+			Utilisateur user,
+			IServiceProvider serviceProvider,
+			IAuthentificationService authService)
+		{
+			InitializeComponent();
+			this.Text = "VisionFlix - Profil Utilisateur";
 
-            LoadUserData();
-            ConfigurerBoutonGestion();
-            ConfigurerAffichageSelonRole();
+			_user = user;
+			_serviceProvider = serviceProvider;
+			_authService = authService;
 
-            btnModifierProfil.Click += BtnModifierProfil_Click;
-            btnGererAbonnement.Click += BtnGererAbonnement_Click;
-            btnDeconnexion.Click += BtnDeconnexion_Click;  
-        }
+			LoadUserData();
+			ConfigurerBoutonGestion();
+			ConfigurerAffichageSelonRole();
 
-        private void ConfigurerBoutonGestion()
-        {
-            if (_user.EstAdministrateur)
-            {
-                btnGererAbonnement.Text = "Gérer (Admin)";
-                btnGererAbonnement.BackColor = Color.FromArgb(220, 53, 69);
-            }
-            else
-            {
-                btnGererAbonnement.Text = "Gérer l'abonnement";
-                btnGererAbonnement.BackColor = Color.FromArgb(255, 193, 7); 
-            }
-        }
+			// Événements des boutons
+			btnModifierProfil.Click += BtnModifierProfil_Click;
+			btnGererAbonnement.Click += BtnGererAbonnement_Click;
 
-        private void ConfigurerAffichageSelonRole()
-        {
-            if (_user.EstAdministrateur)
-            {
-                lblSolde.Visible = false;
-                lblSoldeValue.Visible = false;
-                lblAbonnement.Visible = false;
-                lblAbonnementValue.Visible = false;
+			// Déconnecter d'abord pour éviter les doublons
+			btnDeconnexion.Click -= BtnDeconnexion_Click;
+			// Puis reconnecter
+			btnDeconnexion.Click += BtnDeconnexion_Click;
+		}
 
-                System.Diagnostics.Debug.WriteLine("Profil Admin: Solde et Abonnement masqués");
-            }
-            else
-            {
-                lblSolde.Visible = true;
-                lblSoldeValue.Visible = true;
-                lblAbonnement.Visible = true;
-                lblAbonnementValue.Visible = true;
+		private void ConfigurerBoutonGestion()
+		{
+			if (_user.EstAdministrateur)
+			{
+				btnGererAbonnement.Text = "Gérer (Admin)";
+				btnGererAbonnement.BackColor = Color.FromArgb(220, 53, 69);
+			}
+			else
+			{
+				btnGererAbonnement.Text = "Gérer l'abonnement";
+				btnGererAbonnement.BackColor = Color.FromArgb(255, 193, 7);
+			}
+		}
 
-                System.Diagnostics.Debug.WriteLine("Profil Utilisateur: Solde et Abonnement affichés");
-            }
-        }
+		private void ConfigurerAffichageSelonRole()
+		{
+			if (_user.EstAdministrateur)
+			{
+				lblSolde.Visible = false;
+				lblSoldeValue.Visible = false;
+				lblAbonnement.Visible = false;
+				lblAbonnementValue.Visible = false;
 
-        private void LoadUserData()
-        {
-            lblNomValue.Text = $"{_user.Prenom} {_user.Nom}";
-            lblEmailValue.Text = _user.Email;
+				System.Diagnostics.Debug.WriteLine("Profil Admin: Solde et Abonnement masqués");
+			}
+			else
+			{
+				lblSolde.Visible = true;
+				lblSoldeValue.Visible = true;
+				lblAbonnement.Visible = true;
+				lblAbonnementValue.Visible = true;
 
-            if (_user.EstAdministrateur)
-            {
-                System.Diagnostics.Debug.WriteLine("LoadUserData: Admin détecté");
-            }
-            else
-            {
-                lblSoldeValue.Text = $"{_user.Solde:F2} $";
-                lblAbonnementValue.Text = _user.EstAbonne ? _user.PlanActuel : "Aucun";
-            }
-        }
+				System.Diagnostics.Debug.WriteLine("Profil Utilisateur: Solde et Abonnement affichés");
+			}
+		}
 
-        private void BtnModifierProfil_Click(object? sender, EventArgs e)
-        {
-            try
-            {
-                var formulaireUtilisateur = _serviceProvider.GetRequiredService<FormulaireUtilisateur>();
+		private void LoadUserData()
+		{
+			lblNomValue.Text = $"{_user.Prenom} {_user.Nom}";
+			lblEmailValue.Text = _user.Email;
 
-                if (formulaireUtilisateur.ShowDialog() == DialogResult.OK)
-                {
-                    LoadUserData();
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Erreur lors de l'ouverture du formulaire:\n{ex.Message}",
-                    "Erreur",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
-            }
-        }
+			if (_user.EstAdministrateur)
+			{
+				System.Diagnostics.Debug.WriteLine("LoadUserData: Admin détecté");
+			}
+			else
+			{
+				lblSoldeValue.Text = $"{_user.Solde:F2} $";
+				lblAbonnementValue.Text = _user.EstAbonne ? _user.PlanActuel : "Aucun";
+			}
+		}
 
-        private void BtnGererAbonnement_Click(object? sender, EventArgs e)
-        {
-            if (_user.EstAdministrateur)
-            {
-                OuvrirPanneauAdmin();
-            }
-            else
-            {
-                try
-                {
-                    Abonnement abonnementForm = _serviceProvider.GetRequiredService<Abonnement>();
+		private void BtnModifierProfil_Click(object? sender, EventArgs e)
+		{
+			try
+			{
+				var formulaireUtilisateur = _serviceProvider.GetRequiredService<FormulaireUtilisateur>();
 
-                    if (abonnementForm.ShowDialog() == DialogResult.OK)
-                    {
-                        LoadUserData();
-                    }
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show(
-                        $"Erreur lors de l'ouverture de la gestion d'abonnement:\n{ex.Message}",
-                        "Erreur",
-                        MessageBoxButtons.OK,
-                        MessageBoxIcon.Error
-                    );
-                }
-            }
-        }
+				if (formulaireUtilisateur.ShowDialog() == DialogResult.OK)
+				{
+					LoadUserData();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(
+					$"Erreur lors de l'ouverture du formulaire:\n{ex.Message}",
+					"Erreur",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error
+				);
+			}
+		}
 
-       
-        private void BtnDeconnexion_Click(object? sender, EventArgs e)
-        {
-            try
-            {
-                var confirmation = MessageBox.Show(
-                    "Voulez-vous vraiment vous déconnecter?",
-                    "Confirmation",
-                    MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question
-                );
+		private void BtnGererAbonnement_Click(object? sender, EventArgs e)
+		{
+			if (_user.EstAdministrateur)
+			{
+				OuvrirPanneauAdmin();
+			}
+			else
+			{
+				try
+				{
+					Abonnement abonnementForm = _serviceProvider.GetRequiredService<Abonnement>();
 
-                if (confirmation == DialogResult.Yes)
-                {
-                    _authService.Deconnecter();
-                    this.Close();
-                    foreach (Form form in System.Windows.Forms.Application.OpenForms.Cast<Form>().ToList())
-                    {
-                        if (form.Name != "Connexion" )
-                        {
-                            form.Close();
-                        }
-                    }
+					if (abonnementForm.ShowDialog() == DialogResult.OK)
+					{
+						LoadUserData();
+					}
+				}
+				catch (Exception ex)
+				{
+					MessageBox.Show(
+						$"Erreur lors de l'ouverture de la gestion d'abonnement:\n{ex.Message}",
+						"Erreur",
+						MessageBoxButtons.OK,
+						MessageBoxIcon.Error
+					);
+				}
+			}
+		}
 
-                    var connexionForm = _serviceProvider.GetRequiredService<Connexion>();
-                    connexionForm.ShowDialog();
+		/// <summary>
+		/// Gère la déconnexion de l'utilisateur
+		/// Retourne DialogResult.Abort pour signaler une déconnexion
+		/// </summary>
+		private void BtnDeconnexion_Click(object? sender, EventArgs e)
+		{
+			try
+			{
+				// Demander confirmation à l'utilisateur
+				var confirmation = MessageBox.Show(
+					"Voulez-vous vraiment vous déconnecter?",
+					"Confirmation de déconnexion",
+					MessageBoxButtons.YesNo,
+					MessageBoxIcon.Question
+				);
 
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Erreur lors de la déconnexion:\n{ex.Message}",
-                    "Erreur",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+				if (confirmation == DialogResult.Yes)
+				{
+					// Marquer que la déconnexion a été confirmée
+					_deconnexionConfirmee = true;
 
-                System.Diagnostics.Debug.WriteLine($"Erreur déconnexion: {ex.Message}");
-            }
-        }
+					// Déconnecter l'utilisateur (nettoyer la session)
+					_authService.Deconnecter();
+					System.Diagnostics.Debug.WriteLine("✅ Utilisateur déconnecté");
 
-        private void OuvrirPanneauAdmin()
-        {
-            try
-            {
-                PanneauAdmin panneauAdmin = _serviceProvider.GetRequiredService<PanneauAdmin>();
-                panneauAdmin.ShowDialog();
+					// Signaler à la fenêtre parente (Accueil) qu'il y a eu déconnexion
+					this.DialogResult = DialogResult.Abort;
+					this.Close();
+				}
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(
+					$"Erreur lors de la déconnexion:\n{ex.Message}",
+					"Erreur",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error
+				);
 
-                System.Diagnostics.Debug.WriteLine("Panneau Admin ouvert avec succès");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(
-                    $"Erreur lors de l'ouverture du panneau administrateur:\n{ex.Message}",
-                    "Erreur",
-                    MessageBoxButtons.OK,
-                    MessageBoxIcon.Error
-                );
+				System.Diagnostics.Debug.WriteLine($"❌ Erreur déconnexion: {ex.Message}\n{ex.StackTrace}");
+			}
+		}
 
-                System.Diagnostics.Debug.WriteLine($"Erreur Panneau Admin: {ex.Message}");
-            }
-        }
+		protected override void OnFormClosing(FormClosingEventArgs e)
+		{
+			// Si la déconnexion a déjà été confirmée, ne pas redemander
+			if (_deconnexionConfirmee)
+			{
+				base.OnFormClosing(e);
+				return;
+			}
 
-        private void BtnFermer_Click(object? sender, EventArgs e)
-        {
-            Close();
-        }
-    }
+			// Sinon, comportement normal de fermeture
+			base.OnFormClosing(e);
+		}
+
+		private void OuvrirPanneauAdmin()
+		{
+			try
+			{
+				PanneauAdmin panneauAdmin = _serviceProvider.GetRequiredService<PanneauAdmin>();
+				panneauAdmin.ShowDialog();
+
+				System.Diagnostics.Debug.WriteLine("Panneau Admin ouvert avec succès");
+			}
+			catch (Exception ex)
+			{
+				MessageBox.Show(
+					$"Erreur lors de l'ouverture du panneau administrateur:\n{ex.Message}",
+					"Erreur",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error
+				);
+
+				System.Diagnostics.Debug.WriteLine($"Erreur Panneau Admin: {ex.Message}");
+			}
+		}
+	}
 }

@@ -48,7 +48,7 @@
             lblTitre.Font = new Font("Segoe UI", 16F, FontStyle.Bold);
             lblTitre.Location = new Point(30, 25);
             lblTitre.Name = "lblTitre";
-            lblTitre.Size = new Size(182, 45);
+            lblTitre.Size = new Size(154, 37);
             lblTitre.TabIndex = 0;
             lblTitre.Text = "Mon Profil";
             // 
@@ -58,7 +58,7 @@
             lblNom.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblNom.Location = new Point(30, 100);
             lblNom.Name = "lblNom";
-            lblNom.Size = new Size(146, 28);
+            lblNom.Size = new Size(125, 23);
             lblNom.TabIndex = 1;
             lblNom.Text = "Nom complet:";
             // 
@@ -67,7 +67,7 @@
             lblNomValue.AutoSize = true;
             lblNomValue.Location = new Point(248, 103);
             lblNomValue.Name = "lblNomValue";
-            lblNomValue.Size = new Size(115, 25);
+            lblNomValue.Size = new Size(93, 20);
             lblNomValue.TabIndex = 2;
             lblNomValue.Text = "John Dupont";
             // 
@@ -77,7 +77,7 @@
             lblEmail.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblEmail.Location = new Point(30, 140);
             lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(69, 28);
+            lblEmail.Size = new Size(59, 23);
             lblEmail.TabIndex = 3;
             lblEmail.Text = "Email:";
             // 
@@ -86,7 +86,7 @@
             lblEmailValue.AutoSize = true;
             lblEmailValue.Location = new Point(248, 143);
             lblEmailValue.Name = "lblEmailValue";
-            lblEmailValue.Size = new Size(145, 25);
+            lblEmailValue.Size = new Size(121, 20);
             lblEmailValue.TabIndex = 4;
             lblEmailValue.Text = "john@email.com";
             // 
@@ -96,7 +96,7 @@
             lblSolde.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblSolde.Location = new Point(30, 180);
             lblSolde.Name = "lblSolde";
-            lblSolde.Size = new Size(176, 28);
+            lblSolde.Size = new Size(152, 23);
             lblSolde.TabIndex = 5;
             lblSolde.Text = "Solde du compte:";
             // 
@@ -105,7 +105,7 @@
             lblSoldeValue.AutoSize = true;
             lblSoldeValue.Location = new Point(249, 183);
             lblSoldeValue.Name = "lblSoldeValue";
-            lblSoldeValue.Size = new Size(81, 25);
+            lblSoldeValue.Size = new Size(64, 20);
             lblSoldeValue.TabIndex = 6;
             lblSoldeValue.Text = "125.50 $";
             // 
@@ -115,7 +115,7 @@
             lblAbonnement.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             lblAbonnement.Location = new Point(30, 220);
             lblAbonnement.Name = "lblAbonnement";
-            lblAbonnement.Size = new Size(203, 28);
+            lblAbonnement.Size = new Size(172, 23);
             lblAbonnement.TabIndex = 7;
             lblAbonnement.Text = "Abonnement actuel:";
             // 
@@ -124,7 +124,7 @@
             lblAbonnementValue.AutoSize = true;
             lblAbonnementValue.Location = new Point(249, 223);
             lblAbonnementValue.Name = "lblAbonnementValue";
-            lblAbonnementValue.Size = new Size(91, 25);
+            lblAbonnementValue.Size = new Size(74, 20);
             lblAbonnementValue.TabIndex = 8;
             lblAbonnementValue.Text = "PREMIUM";
             // 
@@ -171,6 +171,7 @@
             btnDeconnexion.TabIndex = 11;
             btnDeconnexion.Text = "Déconnexion";
             btnDeconnexion.UseVisualStyleBackColor = false;
+            btnDeconnexion.Click += BtnDeconnexion_Click;
             // 
             // ProfilUtilisateur
             // 
