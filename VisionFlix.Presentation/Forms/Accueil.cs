@@ -178,11 +178,17 @@ namespace VisionFlix.Presentation.Forms
             try
             {
                 var profilForm = new ProfilUtilisateur(
-                    _authService.CurrentUser,   
-                    _serviceProvider             
+                    _authService.CurrentUser,
+                    _serviceProvider,
+                    _authService  
                 );
 
                 profilForm.ShowDialog();
+                if (_authService.CurrentUser == null)
+                {
+                    this.Close();
+                }
+
             }
             catch (Exception ex)
             {

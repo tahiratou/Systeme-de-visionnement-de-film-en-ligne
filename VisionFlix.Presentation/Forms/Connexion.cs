@@ -8,7 +8,6 @@ namespace VisionFlix.Presentation.Forms
         private readonly IAuthentificationService _authService;
         private readonly IServiceProvider _serviceProvider;
 
-        // CONSTRUCTEUR AVEC INJECTION DE DÉPENDANCES
         public Connexion(IAuthentificationService authService, IServiceProvider serviceProvider)
         {
             InitializeComponent();
@@ -17,18 +16,11 @@ namespace VisionFlix.Presentation.Forms
             _serviceProvider = serviceProvider;
         }
 
-        // Bouton de connexion
         private async void btnLogin_Click(object? sender, EventArgs e)
         {
-            // ✅ AVANT: string email = textBox1.Text.Trim();
-            // ✅ APRÈS: string nomUtilisateur = txtNomUtilisateur.Text.Trim();
             string nomUtilisateur = txtIdentifiant.Text.Trim();
-
-            // ✅ AVANT: string motDePasse = textBox2.Text;
-            // ✅ APRÈS: string motDePasse = txtMotDePasse.Text;
             string motDePasse = txtMotDePasse.Text;
 
-            // Validation des champs
             if (string.IsNullOrWhiteSpace(nomUtilisateur))
             {
                 MessageBox.Show("Veuillez entrer votre nom d'utilisateur.", "Erreur",
@@ -45,13 +37,11 @@ namespace VisionFlix.Presentation.Forms
                 return;
             }
 
-            // Désactiver le bouton pendant le traitement
             btnLogin.Enabled = false;
             btnLogin.Text = "Connexion en cours...";
 
             try
             {
-                // Utiliser le service d'authentification avec le nom d'utilisateur
                 var utilisateur = await _authService.ConnecterAsync(nomUtilisateur, motDePasse);
 
                 if (utilisateur != null)
@@ -59,7 +49,6 @@ namespace VisionFlix.Presentation.Forms
                     MessageBox.Show($"Bienvenue {utilisateur.Prenom} {utilisateur.Nom}!",
                         "Connexion réussie", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                    // Ouvrir le formulaire Accueil
                     var accueilForm = _serviceProvider.GetRequiredService<Accueil>();
                     this.Hide();
                     accueilForm.ShowDialog();

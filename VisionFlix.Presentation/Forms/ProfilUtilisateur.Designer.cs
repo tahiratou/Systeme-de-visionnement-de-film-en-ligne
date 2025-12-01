@@ -15,7 +15,7 @@
         private System.Windows.Forms.Label lblAbonnementValue;
         private System.Windows.Forms.Button btnGererAbonnement;
         private System.Windows.Forms.Button btnModifierProfil;
-        private System.Windows.Forms.Button btnFermer;
+        private System.Windows.Forms.Button btnDeconnexion;  // ✅ AJOUT
 
         protected override void Dispose(bool disposing)
         {
@@ -39,7 +39,7 @@
             lblAbonnementValue = new Label();
             btnGererAbonnement = new Button();
             btnModifierProfil = new Button();
-            btnFermer = new Button();
+            btnDeconnexion = new Button();
             SuspendLayout();
             // 
             // lblTitre
@@ -89,7 +89,6 @@
             lblEmailValue.Size = new Size(145, 25);
             lblEmailValue.TabIndex = 4;
             lblEmailValue.Text = "john@email.com";
-            lblEmailValue.Click += lblEmailValue_Click;
             // 
             // lblSolde
             // 
@@ -132,48 +131,51 @@
             // btnGererAbonnement
             // 
             btnGererAbonnement.BackColor = Color.FromArgb(255, 193, 7);
+            btnGererAbonnement.Cursor = Cursors.Hand;
             btnGererAbonnement.FlatStyle = FlatStyle.Flat;
             btnGererAbonnement.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnGererAbonnement.ForeColor = Color.Black;
-            btnGererAbonnement.Location = new Point(30, 300);
+            btnGererAbonnement.Location = new Point(30, 303);
             btnGererAbonnement.Name = "btnGererAbonnement";
-            btnGererAbonnement.Size = new Size(236, 35);
+            btnGererAbonnement.Size = new Size(240, 40);
             btnGererAbonnement.TabIndex = 9;
             btnGererAbonnement.Text = "Gérer l'abonnement";
             btnGererAbonnement.UseVisualStyleBackColor = false;
-            btnGererAbonnement.Click += BtnGererAbonnement_Click;
             // 
             // btnModifierProfil
             // 
             btnModifierProfil.BackColor = Color.FromArgb(0, 120, 215);
+            btnModifierProfil.Cursor = Cursors.Hand;
+            btnModifierProfil.FlatAppearance.BorderSize = 0;
             btnModifierProfil.FlatStyle = FlatStyle.Flat;
             btnModifierProfil.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
             btnModifierProfil.ForeColor = Color.White;
-            btnModifierProfil.Location = new Point(30, 345);
+            btnModifierProfil.Location = new Point(288, 303);
             btnModifierProfil.Name = "btnModifierProfil";
-            btnModifierProfil.Size = new Size(236, 35);
+            btnModifierProfil.Size = new Size(240, 40);
             btnModifierProfil.TabIndex = 10;
             btnModifierProfil.Text = "Modifier le profil";
             btnModifierProfil.UseVisualStyleBackColor = false;
             // 
-            // btnFermer
+            // btnDeconnexion
             // 
-            btnFermer.BackColor = Color.FromArgb(60, 60, 60);
-            btnFermer.FlatStyle = FlatStyle.Flat;
-            btnFermer.Font = new Font("Segoe UI", 10F);
-            btnFermer.ForeColor = Color.White;
-            btnFermer.Location = new Point(400, 390);
-            btnFermer.Name = "btnFermer";
-            btnFermer.Size = new Size(120, 35);
-            btnFermer.TabIndex = 11;
-            btnFermer.Text = "Fermer";
-            btnFermer.UseVisualStyleBackColor = false;
-            btnFermer.Click += BtnFermer_Click;
+            btnDeconnexion.BackColor = Color.FromArgb(229, 9, 20);
+            btnDeconnexion.Cursor = Cursors.Hand;
+            btnDeconnexion.FlatAppearance.BorderSize = 0;
+            btnDeconnexion.FlatStyle = FlatStyle.Flat;
+            btnDeconnexion.Font = new Font("Segoe UI", 10F, FontStyle.Bold);
+            btnDeconnexion.ForeColor = Color.White;
+            btnDeconnexion.Location = new Point(379, 30);
+            btnDeconnexion.Name = "btnDeconnexion";
+            btnDeconnexion.Size = new Size(149, 40);
+            btnDeconnexion.TabIndex = 11;
+            btnDeconnexion.Text = "Déconnexion";
+            btnDeconnexion.UseVisualStyleBackColor = false;
             // 
             // ProfilUtilisateur
             // 
             BackColor = Color.FromArgb(20, 20, 20);
-            ClientSize = new Size(550, 450);
+            ClientSize = new Size(550, 421);
             Controls.Add(lblTitre);
             Controls.Add(lblNom);
             Controls.Add(lblNomValue);
@@ -185,7 +187,7 @@
             Controls.Add(lblAbonnementValue);
             Controls.Add(btnGererAbonnement);
             Controls.Add(btnModifierProfil);
-            Controls.Add(btnFermer);
+            Controls.Add(btnDeconnexion);
             ForeColor = Color.White;
             FormBorderStyle = FormBorderStyle.FixedDialog;
             MaximizeBox = false;
