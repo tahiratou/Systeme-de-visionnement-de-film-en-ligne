@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\tahir\\OneDrive\\Documents\\UQAR\\Automne 2025\\G\u00E9nie logiciel II - INF23207\\VisionFlix\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6E785CA2-C172-4B16-9452-A22F1E73925C}|VisionFlix.WindowsApp\\VisionFlix.WindowsApp.csproj|c:\\users\\tahir\\onedrive\\documents\\uqar\\automne 2025\\g\u00E9nie logiciel ii - inf23207\\visionflix\\visionflix.windowsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6E785CA2-C172-4B16-9452-A22F1E73925C}|VisionFlix.WindowsApp\\VisionFlix.WindowsApp.csproj|solutionrelative:visionflix.windowsapp\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\tahir\\OneDrive\\Documents\\UQAR\\Automne 2025\\G\u00E9nie logiciel II - INF23207\\VisionFlix\\VisionFlix.WindowsApp\\Program.cs",
+              "RelativeDocumentMoniker": "VisionFlix.WindowsApp\\Program.cs",
+              "ToolTip": "C:\\Users\\tahir\\OneDrive\\Documents\\UQAR\\Automne 2025\\G\u00E9nie logiciel II - INF23207\\VisionFlix\\VisionFlix.WindowsApp\\Program.cs",
+              "RelativeToolTip": "VisionFlix.WindowsApp\\Program.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAwwB0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-12T23:42:13.815Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

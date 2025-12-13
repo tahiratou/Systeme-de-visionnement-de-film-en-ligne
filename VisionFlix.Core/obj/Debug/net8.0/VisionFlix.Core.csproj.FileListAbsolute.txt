@@ -1,0 +1,15 @@
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\obj\Debug\net8.0\VisionFlix.Core.csproj.AssemblyReference.cache
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\obj\Debug\net8.0\VisionFlix.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\obj\Debug\net8.0\VisionFlix.Core.AssemblyInfoInputs.cache
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\obj\Debug\net8.0\VisionFlix.Core.AssemblyInfo.cs
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\obj\Debug\net8.0\VisionFlix.Core.csproj.CoreCompileInputs.cache
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\bin\Debug\net8.0\VisionFlix.Core.deps.json
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\bin\Debug\net8.0\VisionFlix.Core.dll
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\bin\Debug\net8.0\VisionFlix.Core.pdb
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\bin\Debug\net8.0\VisionFlix.SharedKernel.dll
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\bin\Debug\net8.0\VisionFlix.SharedKernel.pdb
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\obj\Debug\net8.0\VisionFl.7445D29B.Up2Date
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\obj\Debug\net8.0\VisionFlix.Core.dll
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\obj\Debug\net8.0\refint\VisionFlix.Core.dll
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\obj\Debug\net8.0\VisionFlix.Core.pdb
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Core\obj\Debug\net8.0\ref\VisionFlix.Core.dll

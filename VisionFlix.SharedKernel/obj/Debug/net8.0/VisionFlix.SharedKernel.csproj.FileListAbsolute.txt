@@ -1,0 +1,11 @@
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.SharedKernel\bin\Debug\net8.0\VisionFlix.SharedKernel.deps.json
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.SharedKernel\bin\Debug\net8.0\VisionFlix.SharedKernel.dll
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.SharedKernel\bin\Debug\net8.0\VisionFlix.SharedKernel.pdb
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.SharedKernel\obj\Debug\net8.0\VisionFlix.SharedKernel.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.SharedKernel\obj\Debug\net8.0\VisionFlix.SharedKernel.AssemblyInfoInputs.cache
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.SharedKernel\obj\Debug\net8.0\VisionFlix.SharedKernel.AssemblyInfo.cs
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.SharedKernel\obj\Debug\net8.0\VisionFlix.SharedKernel.csproj.CoreCompileInputs.cache
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.SharedKernel\obj\Debug\net8.0\VisionFlix.SharedKernel.dll
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.SharedKernel\obj\Debug\net8.0\refint\VisionFlix.SharedKernel.dll
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.SharedKernel\obj\Debug\net8.0\VisionFlix.SharedKernel.pdb
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.SharedKernel\obj\Debug\net8.0\ref\VisionFlix.SharedKernel.dll

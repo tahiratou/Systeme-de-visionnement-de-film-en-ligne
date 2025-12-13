@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="ConsoleTestApp/ConsoleTestApp.csproj" />
+  <Project Path="VisionFlix.Core/VisionFlix.Core.csproj" />
+  <Project Path="VisionFlix.Infrastructure/VisionFlix.Infrastructure.csproj" />
+  <Project Path="VisionFlix.SharedKernel/VisionFlix.SharedKernel.csproj" />
+  <Project Path="VisionFlix.WindowsApp/VisionFlix.WindowsApp.csproj" />
+</Solution>

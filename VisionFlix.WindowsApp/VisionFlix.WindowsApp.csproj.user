@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Forms\Abonnement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Accueil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\AccueilPublic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Connexion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\DetailsFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\DetailsFilmPublic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FicheFilm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\FormulaireCategorie.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormulaireFilm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormulaireLangue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormulairePlanAbonnement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\FormulaireUtilisateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\GestionCategories.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\GestionFilms.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\GestionFinances.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\GestionLangues.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\GestionPlansAbonnement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\Inscription.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\PanneauAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\ProfilUtilisateur.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

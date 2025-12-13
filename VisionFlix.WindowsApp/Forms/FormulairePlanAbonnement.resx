@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this schema is to represent strongly typed
+    resource data and to be able to persist the binary format of resources.
+    The primary goals of this schema is to represent strongly typed
+    resource data and to be able to persist the binary format of resources.
+    It is also used as the primary file format for resources in .NET projects.
+    For the production of .resx files, the aspnetgen tool is used.
+    The utility is based on the ResXResourceWriter class.
+    
+    A strongly typed resource data model
+    
+    Classes:
+    ResXResourceWriter - writes resources to a .resx file
+    ResXResourceReader - reads resources from a .resx file
+    ResXDataNode - represents a resource data node.
+    
+    The ResXDataNode class has the following properties:
+    
+    Name - the name of the resource
+    Value - the value of the resource
+    Comment - the comment associated with the resource
+    Type - the type of the resource (e.g. System.String, System.Drawing.Bitmap)
+    MimeType - the MIME type of the resource (e.g. image/jpeg, text/html)
+    
+    The ResXDataNode class has the following methods:
+    
+    ToString() - returns the string reWindowsApp of the resource
+    
+    The ResXResourceWriter class has the following methods:
+    
+    AddResource(string name, object value) - adds a resource to the .resx file
+    AddResource(string name, object value, string comment) - adds a resource to the .resx file
+    AddResource(string name, object value, string comment, string type) - adds a resource to the .resx file
+    AddResource(string name, object value, string comment, string type, string mimeType) - adds a resource to the .resx file
+    
+    The ResXResourceReader class has the following methods:
+    
+    GetEnumerator() - returns an enumerator for the resources in the .resx file
+    
+    The ResXResourceReader class has the following properties:
+    
+    BasePath - the base path for the resources in the .resx file
+    
+    The ResXResourceReader class has the following methods:
+    
+    Close() - closes the .resx file
+    
+    The ResXResourceReader class has the following properties:
+    
+    Use  the ResXResourceWriter class to write resources to a .resx file.
+    Use the ResXResourceReader class to read resources from a .resx file.
+    
+    For more information on .resx files, please see the MSDN documentation.
+    
+  -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:Is='DataSet'>
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+</root>
