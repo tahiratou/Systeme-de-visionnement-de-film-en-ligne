@@ -17,3 +17,4 @@ C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF2320
 C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFlix.Infrastructure.pdb
 C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFlix.Infrastructure.genruntimeconfig.cache
 C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Infrastructure\obj\Debug\net8.0\ref\VisionFlix.Infrastructure.dll
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.Infrastructure\obj\Debug\net8.0\VisionFlix.Infrastructure.sourcelink.json

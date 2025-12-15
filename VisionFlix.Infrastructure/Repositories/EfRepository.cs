@@ -18,14 +18,14 @@ namespace VisionFlix.Infrastructure.Repositories
             _context = context;
         }
 
-       
         private IQueryable<T> ApplySpecification(ISpecification<T> spec)
         {
             return SpecificationEvaluator<T>.GetQuery(
                 _context.Set<T>().AsQueryable(), spec);
         }
 
-       
+
+
         public async Task<T> GetByIdAsync(int id)
         {
             return await _context.Set<T>().FindAsync(id);
@@ -50,12 +50,30 @@ namespace VisionFlix.Infrastructure.Repositories
 
         public async Task UpdateAsync(T entity)
         {
+            var existingEntity = _context.Set<T>()
+                .Local
+                .FirstOrDefault(e => e.Id == entity.Id);
+
+            if (existingEntity != null)
+            {
+                _context.Entry(existingEntity).State = EntityState.Detached;
+            }
+
             _context.Entry(entity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
 
         public async Task DeleteAsync(T entity)
         {
+            var existingEntity = _context.Set<T>()
+                .Local
+                .FirstOrDefault(e => e.Id == entity.Id);
+
+            if (existingEntity != null)
+            {
+                _context.Entry(existingEntity).State = EntityState.Detached;
+            }
+
             _context.Set<T>().Remove(entity);
             await _context.SaveChangesAsync();
         }
@@ -65,7 +83,8 @@ namespace VisionFlix.Infrastructure.Repositories
             return await ApplySpecification(spec).CountAsync();
         }
 
-       
+
+
         public T GetById(int id)
         {
             return _context.Set<T>().Find(id);
@@ -90,12 +109,30 @@ namespace VisionFlix.Infrastructure.Repositories
 
         public int Update(T entity)
         {
+            var existingEntity = _context.Set<T>()
+                .Local
+                .FirstOrDefault(e => e.Id == entity.Id);
+
+            if (existingEntity != null)
+            {
+                _context.Entry(existingEntity).State = EntityState.Detached;
+            }
+
             _context.Entry(entity).State = EntityState.Modified;
             return _context.SaveChanges();
         }
 
         public int Delete(T entity)
         {
+            var existingEntity = _context.Set<T>()
+                .Local
+                .FirstOrDefault(e => e.Id == entity.Id);
+
+            if (existingEntity != null)
+            {
+                _context.Entry(existingEntity).State = EntityState.Detached;
+            }
+
             _context.Set<T>().Remove(entity);
             return _context.SaveChanges();
         }

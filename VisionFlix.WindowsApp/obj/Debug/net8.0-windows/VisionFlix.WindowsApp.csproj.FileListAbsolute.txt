@@ -166,3 +166,4 @@ C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF2320
 C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.WindowsApp\bin\Debug\net8.0-windows\tr\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.WindowsApp\bin\Debug\net8.0-windows\zh-Hans\Microsoft.CodeAnalysis.Workspaces.resources.dll
 C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.WindowsApp\bin\Debug\net8.0-windows\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
+C:\Users\tahir\OneDrive\Documents\UQAR\Automne 2025\Génie logiciel II - INF23207\VisionFlix\VisionFlix.WindowsApp\obj\Debug\net8.0-windows\VisionFlix.WindowsApp.sourcelink.json

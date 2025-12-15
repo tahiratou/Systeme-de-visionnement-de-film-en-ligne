@@ -199,7 +199,7 @@ namespace VisionFlix.WindowsApp.Forms
             var dialogueConnexion = new Form
             {
                 Text = "Connexion requise",
-                Size = new Size(450, 220),
+                Size = new Size(530, 300),
                 StartPosition = FormStartPosition.CenterParent,
                 FormBorderStyle = FormBorderStyle.FixedDialog,
                 MaximizeBox = false,
@@ -211,7 +211,7 @@ namespace VisionFlix.WindowsApp.Forms
             {
                 Text = message,
                 Location = new Point(20, 20),
-                Size = new Size(390, 60),
+                Size = new Size(500, 60),
                 ForeColor = Color.White,
                 Font = new Font("Segoe UI", 10F)
             };
@@ -220,7 +220,7 @@ namespace VisionFlix.WindowsApp.Forms
             {
                 Text = info,
                 Location = new Point(20, 90),
-                Size = new Size(390, 30),
+                Size = new Size(440, 60),
                 ForeColor = action == "Acheter" ? Color.FromArgb(40, 167, 69) : Color.FromArgb(255, 193, 7),
                 Font = new Font("Segoe UI", 9F, FontStyle.Italic)
             };
@@ -228,8 +228,8 @@ namespace VisionFlix.WindowsApp.Forms
             var btnSeConnecter = new Button
             {
                 Text = "🔐 Se connecter",
-                Location = new Point(50, 130),
-                Size = new Size(150, 40),
+                Location = new Point(45, 160),
+                Size = new Size(200, 40),
                 BackColor = Color.FromArgb(0, 120, 215),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat,
@@ -246,8 +246,8 @@ namespace VisionFlix.WindowsApp.Forms
             var btnAnnuler = new Button
             {
                 Text = "Annuler",
-                Location = new Point(230, 130),
-                Size = new Size(150, 40),
+                Location = new Point(265, 160),
+                Size = new Size(200, 40),
                 BackColor = Color.FromArgb(60, 60, 60),
                 ForeColor = Color.White,
                 FlatStyle = FlatStyle.Flat,

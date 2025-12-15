@@ -11,10 +11,9 @@ namespace VisionFlix.WindowsApp.Forms
             InitializeComponent();
             this.Text = "VisionFlix - Ajouter un film";
 
-            // ✅ Initialiser la langue par défaut
             if (cmbLangue.Items.Count > 0)
             {
-                cmbLangue.SelectedIndex = 0; // Français par défaut
+                cmbLangue.SelectedIndex = 0; 
             }
         }
 
@@ -33,7 +32,6 @@ namespace VisionFlix.WindowsApp.Forms
             numDuration.Value = film.Duree;
             cmbGenre.Text = film.Genre;
 
-            // ✅ CHARGER LA LANGUE
             if (!string.IsNullOrEmpty(film.Langue))
             {
                 int index = cmbLangue.Items.IndexOf(film.Langue);
@@ -43,7 +41,7 @@ namespace VisionFlix.WindowsApp.Forms
                 }
                 else
                 {
-                    cmbLangue.SelectedIndex = 0; // Français par défaut si non trouvé
+                    cmbLangue.SelectedIndex = 0; 
                 }
             }
 
@@ -51,7 +49,6 @@ namespace VisionFlix.WindowsApp.Forms
             txtSynopsis.Text = film.Synopsis;
             numPrice.Value = film.Prix;
 
-            // ✅ CHARGER LA DISPONIBILITÉ
             chkDisponible.Checked = film.EstDisponible;
         }
 
@@ -70,14 +67,12 @@ namespace VisionFlix.WindowsApp.Forms
                 Duree = (int)numDuration.Value,
                 Genre = cmbGenre.Text,
 
-                // ✅ RÉCUPÉRER LA LANGUE
                 Langue = cmbLangue.SelectedItem?.ToString() ?? "Français",
 
                 ImageUrl = txtThumbnail.Text.Trim(),
                 Synopsis = txtSynopsis.Text.Trim(),
                 Prix = numPrice.Value,
 
-                // ✅ RÉCUPÉRER LA DISPONIBILITÉ
                 EstDisponible = chkDisponible.Checked,
 
                 DateAjout = _filmToEdit?.DateAjout ?? DateTime.Now
@@ -86,7 +81,6 @@ namespace VisionFlix.WindowsApp.Forms
 
         private void BtnSave_Click(object? sender, EventArgs e)
         {
-            // ✅ VALIDATION TITRE
             if (string.IsNullOrWhiteSpace(txtTitle.Text))
             {
                 MessageBox.Show(
@@ -98,7 +92,6 @@ namespace VisionFlix.WindowsApp.Forms
                 return;
             }
 
-            // ✅ VALIDATION RÉALISATEUR
             if (string.IsNullOrWhiteSpace(txtDirector.Text))
             {
                 MessageBox.Show(
@@ -110,7 +103,6 @@ namespace VisionFlix.WindowsApp.Forms
                 return;
             }
 
-            // ✅ VALIDATION GENRE
             if (cmbGenre.SelectedIndex == -1 || string.IsNullOrWhiteSpace(cmbGenre.Text))
             {
                 MessageBox.Show(
@@ -122,7 +114,6 @@ namespace VisionFlix.WindowsApp.Forms
                 return;
             }
 
-            // ✅ VALIDATION LANGUE
             if (cmbLangue.SelectedIndex == -1)
             {
                 MessageBox.Show(
@@ -134,7 +125,6 @@ namespace VisionFlix.WindowsApp.Forms
                 return;
             }
 
-            // ✅ VALIDATION PRIX
             if (numPrice.Value <= 0)
             {
                 MessageBox.Show(

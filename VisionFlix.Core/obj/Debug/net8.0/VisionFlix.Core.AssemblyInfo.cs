@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("VisionFlix.Core")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+319c4d0febf218a059f235a6d1cb87a8ebc9b7e1")]
 [assembly: System.Reflection.AssemblyProductAttribute("VisionFlix.Core")]
 [assembly: System.Reflection.AssemblyTitleAttribute("VisionFlix.Core")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
